@@ -1,0 +1,2032 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.3">
+  <Nodes>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="821" width="875" height="255" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 59</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="52">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="560" y="897" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+                <FormulaField expression="IF IsNull([Primary Point]) THEN &quot;N/A&quot; ELSE ([Primary Point]) ENDIF" field="Primary Point" size="30" type="String" />
+                <FormulaField expression="IF IsNull([Population]) THEN 0 ELSE ([Population]) ENDIF" field="Population" size="4" type="Int32" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DI_CreateDate = DateTimeNow()
+Primary Point = IF IsNull([Primary Point]) THEN "N...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="58">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="368" y="897" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="FIPS" selected="True" />
+                <SelectField field="City" selected="True" />
+                <SelectField field="Year" selected="True" />
+                <SelectField field="Population" selected="True" />
+                <SelectField field="Primary Point" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="897" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Total_City_Population_by_Year.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="FIPS" size="254" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_WString" />
+                <Field name="City" size="254" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_WString" />
+                <Field name="Year" size="254" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_WString" />
+                <Field name="Population" size="254" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_WString" />
+                <Field name="Primary Point" size="254" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="212" y="897" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="FIPS" selected="True" />
+                <Field field="City" selected="True" />
+                <Field field="Year" selected="True" />
+                <Field field="Population" selected="True" />
+                <Field field="Primary Point" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="FIPS" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="Int32" />
+                <Field name="City" size="20" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="V_String" />
+                <Field name="Year" size="13" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="String" />
+                <Field name="Population" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="Int32" />
+                <Field name="Primary Point" size="30" source="File: C:\Users\Tj\Downloads\Total_City_Population_by_Year.tsv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="86">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="452" y="897" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Year" />
+                <Field name="FIPS" selected="False" />
+                <Field name="City" selected="False" />
+                <Field name="Population" selected="False" />
+                <Field name="Primary Point" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeFormat(DateTimeParse([Year],"%b %Y"),"%Y-%m-%d")</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeFormat(DateTimeParse([Year],"%b %Y"),"%Y-%m-%d")</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="93">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="798" y="930" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_city_population_by_year_alteryx</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_city_popul...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="786" y="870" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_12872_591fabfa7834da498d1ad2aaa754da18_\Engine_12872_887a76df48ec6742b6d536a8cc7f5549~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="55" y="1085" width="752" height="279" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 65</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="60">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="1161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>County_Population_in_Iowa_by_Year.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="FIPS" size="254" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_WString" />
+                <Field name="County" size="254" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_WString" />
+                <Field name="Year" size="254" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_WString" />
+                <Field name="Population" size="254" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_WString" />
+                <Field name="Primary Point" size="254" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="61">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="200" y="1161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="FIPS" selected="True" />
+                <Field field="County" selected="True" />
+                <Field field="Year" selected="True" />
+                <Field field="Population" selected="True" />
+                <Field field="Primary Point" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="FIPS" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="Int16" />
+                <Field name="County" size="20" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="V_String" />
+                <Field name="Year" size="13" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="String" />
+                <Field name="Population" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="Int32" />
+                <Field name="Primary Point" size="30" source="File: C:\Users\Tj\Downloads\County_Population_in_Iowa_by_Year.tsv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="62">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="320" y="1161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="FIPS" selected="True" />
+                <SelectField field="County" selected="True" />
+                <SelectField field="Year" selected="True" />
+                <SelectField field="Population" selected="True" />
+                <SelectField field="Primary Point" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="63">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="452" y="1161" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+                <FormulaField expression="DateTimeFormat(DateTimeParse([Year],&quot;%b %Y&quot;),&quot;%Y-%m-%d&quot;)" field="Year" size="13" type="String" />
+                <FormulaField expression="IF IsNull([Primary Point]) THEN &quot;N/A&quot; ELSE ([Primary Point]) ENDIF" field="Primary Point" size="30" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DI_CreateDate = DateTimeNow()
+Year = DateTimeFormat(DateTimeParse([Year],"%b %Y"...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="64">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="666" y="1134" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_11828_aea7505b246e844e817a85507222da6a_\Engine_11828_d18005d7b1530d459d531288e3adacda~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="94">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="678" y="1218" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_county_population_by_year_alteryx</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_county_pop...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="55" y="557" width="1076" height="279" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 40</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="33">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="704" y="633" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[DI_CreateDate = DateTimeNow()
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="34">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="584" y="633" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Store" selected="True" />
+                <SelectField field="Name" selected="True" />
+                <SelectField field="Store Status" selected="True" />
+                <SelectField field="Address" selected="True" />
+                <SelectField field="City" selected="True" />
+                <SelectField field="State" selected="True" />
+                <SelectField field="Zip Code" selected="True" />
+                <SelectField field="Store Address" selected="True" />
+                <SelectField field="New_Report Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="35">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="476" y="633" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Report Date" />
+                <Field name="Store" selected="False" />
+                <Field name="Name" selected="False" />
+                <Field name="Store Status" selected="False" />
+                <Field name="Address" selected="False" />
+                <Field name="City" selected="False" />
+                <Field name="State" selected="False" />
+                <Field name="Zip Code" selected="False" />
+                <Field name="Store Address" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeParse([_CurrentField_], '%m/%d/%Y')</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeParse([_CurrentField_], '%m/%d/%Y')</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="36">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="356" y="633" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Store" selected="True" />
+                <SelectField field="Name" selected="True" />
+                <SelectField field="Store Status" selected="True" />
+                <SelectField field="Address" selected="True" />
+                <SelectField field="City" selected="True" />
+                <SelectField field="State" selected="True" />
+                <SelectField field="Zip Code" selected="True" />
+                <SelectField field="Store Address" selected="True" />
+                <SelectField field="Report Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="224" y="632" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Store" selected="True" />
+                <Field field="Name" selected="True" />
+                <Field field="Store Status" selected="True" />
+                <Field field="Address" selected="True" />
+                <Field field="City" selected="True" />
+                <Field field="State" selected="True" />
+                <Field field="Zip Code" selected="True" />
+                <Field field="Store Address" selected="True" />
+                <Field field="Report Date" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Store" size="6" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="String" />
+                <Field name="Name" size="58" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_String" />
+                <Field name="Store Status" size="1" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="String" />
+                <Field name="Address" size="55" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_String" />
+                <Field name="City" size="17" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_String" />
+                <Field name="State" size="2" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="String" />
+                <Field name="Zip Code" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="Int32" />
+                <Field name="Store Address" size="37" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_String" />
+                <Field name="Report Date" size="10" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="80" y="632" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Iowa_Liquor_Stores.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Store" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Name" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Store Status" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Address" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="City" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="State" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Zip Code" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Store Address" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+                <Field name="Report Date" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Stores.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="990" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_2560_25ae3d00c2f488468e8e73024cddb59a_\Engine_2560_7d85e8c335f5dc48a3ae0a1963beafb2~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="800" y="633" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF IsNull([Store Address]) THEN &quot;N/A&quot; ELSE ([Store Address]) ENDIF" field="Store Address" size="37" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Store Address = IF IsNull([Store Address]) THEN "N/A" ELSE ([Store Address]) END...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="92">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1002" y="690" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_liquor_stores_alteryx</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_liquor_sto...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="65" y="0" width="790" height="279" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 17</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="1">
+          <GuiSettings Plugin="big_query_input_v3.0.0">
+            <Position x="90" y="79" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <authType>ServicePrincipal</authType>
+              <driveCheckbox>False</driveCheckbox>
+              <storageCheckbox>False</storageCheckbox>
+              <bigtableCheckbox>False</bigtableCheckbox>
+              <clientId>
+              </clientId>
+              <selectedId>
+              </selectedId>
+              <treeState>{"nodes":{"steadfast-task-382120":{"loading":false,"expanded":false}}}</treeState>
+              <treeData>[{"cloud_id":"steadfast-task-382120","cloud_type":"PROJECT","name":"DAMG7370Project","id":"steadfast-task-382120","idx":0,"children":[]}]</treeData>
+              <inputRecordLimit>1</inputRecordLimit>
+              <shouldLimitRecords>False</shouldLimitRecords>
+              <usingCustomFilter>True</usingCustomFilter>
+              <inputCustomFilter>SELECT * FROM bigquery-public-data.iowa_liquor_sales.sales</inputCustomFilter>
+              <customFilterProjectId>steadfast-task-382120</customFilterProjectId>
+              <sqlType>STANDARD_SQL</sqlType>
+              <maxFieldLength>255</maxFieldLength>
+              <preSqlQuery>Empty</preSqlQuery>
+              <postSqlQuery>Empty</postSqlQuery>
+              <clientSecret>
+              </clientSecret>
+              <serviceCredsJSONStr>201000000D08C9DDF0115D1118C7A00C04FC297EB01000000BD34C8955D308246937F0E385E8CD9030400000008000000500057004400000010660000000100002000000023CC945A8981B4BB48CB172849D90784CDBCEE431A1B1228BB941C8E950C5251000000000E800000000200002000000028C6746BB0B447C9B9D90095D0FE0174A272387B9567329DD975A56C3805D972004D0000A4A3EA68FA230D6FA9B37C6A442529CAD7025C420E0ABCAEDDFBA6E4A94A94C35F0CB05D618382F26290A2518D2053F4352A4FE9A234DBC09AF44B52A1162A45CEEE96877179D8B5102D0B469E35F5CABE70A1AE4C860E0FE1A45CA73792340F76702FD0B68738831BD644FC21315A5697375188DFB657440B6EB73C2221E700475EE4791EC2A796964A632C3363DF1F0E2B931A692BB709722DCB1BA909AF880A4EE473965376FAF4D464EFE929279DBBA5E49C3C16337A2C09AEA1D4599648AAA94C43AE8930794D7E460D3D343CB481E0558C55F7BF12287FFDB7A1A28CA505DCF00FD86BFB9C46775F2509E75B49BD864C06757C1B835D117C144316CC426785DF0E412B69C842400DFA79958E00E39038B3A72235ED4BCED7D2C81CCF27FE4DA00A52272AF44CCB5D2DFDDE558BFAA511B8898452BDA1B8BAEF9CD7751156B8E2983286DA50FCA287D19B819B34676CA29B9933B2E16C46A71433D6F22FAD6491406D8EA22E9F073346B004ED5FBA97E036891DBCC46CF1660393156AAA2DC81CC9BADCCE77DE305810B3D243549D22BC27929DBE0F3683FD69ADC4901CD6EE8E08476DED49E092A2CFF5EE7545D164FAF88018730F4A2B182DDE33D94BA1776B1DA0B44F24F56472BA7188648B65B0423AF1469DBC0470981BCD0DDC90CF46BC51C21D81F6F82853088EEEDDFC8CFAA0DBB49EA7C7131B07128FE6FC96EB1898CC326CADD754F0263509B0DF18386F107F4759FA72E8F5B0847F992A8E127FCC1FA00235A069E68E6BC0D01081A37CCDA69D81AE4690D3942D598E96533602FF9F9EB1F3300390CFE6D56E77058B8DE9A6191EFA2B9D885C9442CDE8CA5DC5D764B6BEB7BF7258E927E76035BDC62ACADB425610695F492217E1F9B817ADC1020085007DE30D4D79DCA8A7AC9D99E8E0B007A4650FDA6CCB74C8EEA23016565257122D7684E723420F6FAC01DD0974FBD2FB31A4930104FA5D83CB23AFAAE6AA5B39033679417A214578537FA84CE0AEA991352074DFB5F88E68DD97A4BACC5013FA782590D0521E2D974F6A56D12FC16D80CE79434EE4B5693FB5C5D1242FE1CEBE3033F577045F3DC00EF748B3FB36C731CA441A66F8DDD7C14BFA3CB456F9EAAEED4C056E0852CA965DEA526C50A45D840C8120F25625637E133FA691BB452EC087AC6266A1A7FF680EF101C2D2A4BFE618F5D8751C93D2F257A2CBCF06EE9E59E03F5E405272E9C5740DA405758BB7ED65C33D0B2515BA854790C00B3809D0C8E5FE6554461B91834CCD7541F1DDF8DAEAF605EFC63D8E7F1091EC91F6FB31D2E72090B29B324F8F538BA82AC9EEC37C8FD351A9A786E4D35580A8DFFE9A600229B44235FC3DE24331CFAEE9A4F2B485117403AF2CD2DC9459A93F615EB39F1E8F363A29B3C06D9F63679D62BCED42606241931C3A85ADAE315877FB2C7C39BEE17651AE1D652B6393B196F25CE8A1F1AA36D393180555FF3449F6CCFF2D5252AAD67DD77A55DC1F5638D4BBAAAEF713C52F5CC38376E850E39B99FEA6229D08B0CD8DA1868F056F38B49B7A0FF4B6F135FE584B5DA6D47D4DD08975B2B89E6581CF969464AD0779BC86D67E4E05DC4A4CB89075E1450F09A398D845AE01202F46A03F84A67C8DED0DCF4F62F875FD426A1196CA629DF82A92E6377A9A44AFC7EE2B5EA6734C9E3E16475FFE88CF028DEBA59197B977230174DA5D0D0E90AB36772B36592A0CECEA1B9228396A20CAF902D60DE5FA7F11C68A3ADDC0CA1FC727DD365CA4AD31E03A9A2AAD6A860A423EBCCA3B39821FC13830DF41157C39B47102AD3A499CB64D986B25DE9C64030CE4557E3405F60511FBB32B7B81540322D9C87249193CD4FCE2C94E73C439F529EA90E2D6722D49AABD539D77C9F1CEDA384148B05D2312CCAEE62B9EF288B2724AEB34196F410407DB5E475B9004D571E0A76374D4868396F76516F042336E128CF6169934792C7211B1F8DD3C3D6148821515DDB58CBCBFB34B412E54BF2B1A6930D7726B0763D1DC51F64857FC28D073FA37E2B361CA3600A3AA62E14BD4BEE5F5871C9BC6C802411EAFC5346086614D8A06F40B98D61ABE7952E3CB4C9424B202767E926D30B1CA7AC7121B2109810E42FD78F06382E83146178FC95B6E2BB5C7C2A383DDDE81D36C7B877C2FFB2367B60401EB3A49C1C03A34DAF6B1E67F5761C53EAD6F001FD1215B4FCC387E16EE143611E4B263181315665DD4E1190CC1AF27B3FEF7C4618C76DB9F708E123431F6B67858DEB510268D33783ECACC63B49D7CDEDA47F2B7F7D037829825957410753AB47F5B649E60B0A48FCBB6E1B6A360B973D7212A3CBCB22DA9BBD16F6EC241A11C4EFF2A2CD4CBDF62EC1E673FB57EAF0E81BAC685D7EC53E5565BCBC023B063A50364ABFCA6986ADFBED3CF6AAE1F5EC57AEA1F96C1E663B51476271D59E549300BA4F95C0643625CFFB6826BC22F28ABF9BFDFD4CF9BBB62B7E65079C2489B55412C933C79B254DED21EEC539CCF3F477D85EC4A0A68DA5149F71F59FBD3627CFCF5A32D957721753E08E959B75652C1C31BB01AE92A160303E7B794028968F436FC01924C866BE6DC87349145CEE774CB7E2A87F900DC9548DC6776534AC9B1B3ABE60A822A5474E68721D52E074E2D6229B418D5EF4D0B90D1AEBD19238D5164874BAAD4093DF31C330AEB424A163084C8D04CA5317F99FFD1F7A0C1C534063DCBF1EF4FEA2BE75B8628E57839F23AB3004F97D391728036F0E75E5D14B8C68C7870695C8B2ABC084B6769034A6AB40211DDA49A95599D0751D64EE93E55003C590C9889B61B6C7813762801D23FA87C1CF2CB2C05A40A47BE60E0A74AA60ECF2318D13F033DAE27EBD910BB25B5821600767AC7BA00F63B466A9F8975AF613F56F6F4FDAC3F90B18CDB0727A58A7B022C279B1B4E7B5E26E75610EADA7CAAC4E5B3E10B4C71C24197323E281BCE87F153EF0E51C8BE3EE811547C73582AE56B669CE946050FE52DC64A2CF0111D12205200889CC6244D9811F9C02685F3BF2631379C594B6D7DE92195F6ED9C9DCFDE62A923736618B450B7EB4E8DB34F104E48A614FF57A491CE505B838E0B645594AFC973F90670E7DEE1266F76849367467E0B761F82561ACA56A9BB7CB897945D436B2982483BDB225A2C9D4ADD30AF77C69AF2521F5D1E88DE8510553160D15154CFA2DFAF148FA2323084E3C4EB006F5B4577F0200E28CC710EC88961586B56726E53C6386FC3FDA1C6D3FEB8613936634E869948B1AB3CE3EB4AE61EDE7909A5650B1C16CCE1B7C19204654B9505484069B935ECE77CCEE0DB60A6BBFBD78737D3BB493B6AB7A59F4A0EBF89453C586230E2C00791202E9626F7A780081375BE4173B08C44A101262239055A63E3651C2612EFB73B2AC1493CCEC2A2A209D09151719266D1B587952D3179308C8651E1D9A0DC0828F2527E31E8ECAD62B0876829B7D64AE7007FFF278CC7FAB4D172079D4D3ED3FED877E23BE6D00137F40055A9E2A618927AF002243AFEBCF3F451B81730EB54C10BB437F7E87BC50253E37CA31C9F4D8B7B5B805E8D2E46D16DE715E0EA62BBD15A25A9690DEA2A046F3ECE93D41D0273CF9889774A296D09AED7F61D56CEEFC549DBAD735FF3B8F512C47BFABD7AC657D8B14D0F354D95B50DC8BE4BB1A350E63D15C3D53A8A351F2C282879EF0FA3273E00C10D2AF6F8DB41B782D8419F2FB722BB50281AAA8E6518237D47B38687CE79A35A332ADE84985B98C48CFF8D1FFEB72D2472B87E7E81DB5E26D50CD16AAA5DBAD668ED3D8FD9F29517E593F7DCD9E11A46F5520744BBE8E324BF754CA02EB85FA7D8E80099567E89C29B865C7193BC99332F8650CB57C1FED2EB1EF3615A66B2E4574139C245EF07BBBCE20E333F3406133A899D29E571BC7DD3C995A78EC84706E4E2C2A4AD3B7A8C432C755B2152E99D2E4F25B5DE6F7C3C5BC3D01F9E7BA14213CA8ED418D6BAF893E7F6F1C5E5899F05241A67FC2CE569474C5B277EDB0C1C5D34BBD000D1843884C88A9714208B6F1F56A3105E7FF2013B8C32E9ED7F2D2CE91E3306E124533AFFBEA421710F1A71F9AAB956F6DCFFF9E9921652D3F6AB741D5B325B993FFD95A0CC8B437A391BCFB6D578336120F79F2F526DB93E3CE8FBD228A9C90ADF47BB5527755832617F2C9AEEE73280C7B05357E60A7C47064FBE8E280C520EB4594EEC3C6E627BB839F81B2869E111BC59FBBBD45A459E06F268AEB625F9FF8BE1334E5C50A170BDB4C1D533409D584ACC2AAEEDF4963F908394975B7DA0635FF07BA4179572A26FD6829334346F0A902EC402B82481D6FA14686B7BAD02D23D2DC24A30244EBB78F400DE22B346F9FF1D7AA990B4A1593246127FC948E7ACE5D282A815162A4047C4E260684B51FD4EB536D96C51BC8BD30BCC287108E05B9A117EE31F9070958BFA649642AAB53B3C4E7448E2CF1B9ECB75E8C583357FF8EBBD7FB810FB729FD2E408810914F24AEE93ACDE0B8FA8069A2BBBB0C127202149ED67F26C9A7911C86F777001D44896717E8A92E0481919F87EB5C84D1969A36A1D2ADBE3EFB6399E2053FC903355AEF79A07138BC4DB287943E01F49DF3C591FE4F4529360673A07469FDB0F4916B5B5B7A0B496C28AAEA1B2DCD9EC3D80FF53CE72BEEA917B178020BD97D0DD838011D838878D811F65C67239553DD0D59C1D32AD81A1396DA5AF7B22D1085DA8DA49222DDCDD1C49B44BCB9AA112A5761C4C2500892EFFB73EC6199BEB843085FA275B920DDF93C19E032CA5895E5128841FBF52B29DE037D792ABDDFB26BEBCBD3E8E5D783599159AAB6085D29DFFA410A03032D5A074A406B02FBDBF92F1A04327744DB854C16B9871B8269C11F96F1510FC6A23F90CD4D2D03C2B4095FE9C85A88EE207895144D42049BD944AF0BD0FDD6A6CC8CC18D7238395F8AF189E85F80B2BEA243ADC30187D5C526F1D47B1E85E28F805EF096D518330213BEE757D420E84FA5DCB73FA16204E1653B055F8C2630A4FBB6451F292579C629FB8A5F3526874AC2AE586BA7C59DD9EC2095D54926F8B986AB79850BA4C491F4C0A946AF6D9BF92F3BC35E3D269A425B59A2BB371CB4B9CDE4465B421DBF5A23A1A13202EA1A27B5A018DDD1513F4F64B237EC9BD7C05D2AE56DDCAB2E3867C29B6D3E614070D965F7BE5645C57FB2CC8CCEC31D4FA3BEFF764687824CD4F84BAF74B329180E65337228A0CBAA75DC3C27CC0ED7DAD421E14D5B1470393D2F54ADF0F71BBC005C00DC67D3FB269CDDE393E88FFD00C46FB75DC629613DFCB1B62B285DA3BD1F8A96671F8DC28B2FED8C889C0BE0CFAA7DC244B15267BCE0B40BF33500D7006BD39404833ED4CEAF3CAD24EF9124BAFB6E3FB0D5A3612766676FC15CB53FA40D1061AE2574FD355331621B0E2B3CB1AD19B6B967AC9887E9FF1D38DBF2946326C5F53BF735A4C9DFDBBE7A1D9B0147D8E44AD91A2E79B88D459EBA9507128686D82C08A39152C4320B34903DD7B7C4355B5774B15C5396A6DD0BD24B07ABCF53A204F109462F3C36A26EEFEF20F02766E727603D0F89DCCE16494F1B7AC09C590FF1AAD0A601596B12910C8443F2F6A32B0B8C873CC1DFF9F0AECA6582262E7D1719F1B38F49102C55D24371A0FD23D760B16993E0A8C30C699650343DCEB8A0D0D9032187FEB752D534BE04E19E34302E562DC2331693338ECA5CBA7B1039E12A0DBA95917B913D11C3074E2BF6AB07B6E646AC1ABF07A5BF9AE28F48B00C778D84E48FA2121E575B751CB5A5E3CC197181E4F762975E01B491C13253AE27A519D75B9FF1BB55D1A2D608701F2ECEEA103D24D4E5265AF0ADF0F3641451D12DCAEC25D96AB37E8A05250471E86AB94487F1B981691D4E4D15455FA9566DF3244E09DB58DA23F774D3202A31A233A131B99828B6504049F508935B0B9740D0D99BDD911F22D9874ADEAA9920FB1CEC0ACC1FA9C4BB43C55D408B8F38B7EA1FCE59BBF0C5B40D3F0F6DE890694D74B183FDEDB5F133F677DF1F5827EC15C69A0DD191047698FE0C5F35FCD91D42612C901CDBAF3A77E8EA991A8F54196199981678BE524804D5A18C532927AB213A521974D08AED02D59D5B4DCC8184C514DE6A06BD57CFBC0D8E57971E03392DBF6066984756DF15937979DF803801052A3B8538A281A18C3FC094759BADEF1A85336D1CBF149DEDB7F89710F10A48D74FBBA21CC1C278DEF99076940F25CE4C0C6C5C76E4AD07D62BA1EDC1AADEB2B8331484A934BEEE73670648DFB3F95DA78F047321604FF83BA655094E8BD7B79382526CA3AA3EC5C6EA4634099DEBAF5FF67CA2577CE2DD67433A614E45FD816908AEFD1A14177B76F7A0DA11D5FDA37E43AB33BFE34E92248D63D386FB2CDED174746EC86F0BB52189B1714AFE6A9E66EE3BB33B670914D264D956F11DE2DFD5579A6B3136C606FF8F881EA9ABBCDDEC1A88C1C10C6FC85F5B6132C6325668387ABCB0BF788F529247DAA0F5E730C933D1482B633FBE229A2962184B5757950D565CDD6C01E2C030AA2656B100B7CFBB9B70DB305C29D623D2A81BF24C28026057070D0D80AB1DA20D80F5BD05D6B8B0233357ED3D04F2954A1D07FDAF5E1BABAD6BFA704E965E475FB5342F7FE10DA236C2720C088379F474221D3128086C99D8AC7FDA9B87747273BCA38B73F58EE61BA3398A82608F435806CE6FFBB861D7B676E2941FA7018B4A5B175C6C3B177B0911E258BDD5A1E181DB89CE0CC9973BB0AC042918FC876E333AA748F5B373C7DC9F31AA044053B48045EAF89634B336D322E484EF2C17717EFC896DAB0A87A367F925E4862E60FBC0AD5B021A2B6A53E790A46585623957A626A4EAA9D25DAA833C86B6548970B88F577CE2AD52ADD9A5367077F1632C0368BA4F5085FC46A5FB29B12D067E14D0691523DAB2338EADE9BD24E33CBB1DA8B10111415CD3FAA5600B6921156B7B890D68CCC262A95406F59390C60CDEB8F272DFA12F61D6AB3F1EA8C906E3617FF65E9896858FD7E8C0E0403E26425285AB0DB897C9FD6D6C85D5A86336DE31D4C88115729F7101687EFB1ECF423ED00E3DDC6FBF8102645396448BFAE006384357C976A30FFDC66ABD74FB281A8EA74B74FDC9629526B1FA87A6EE8172152926B020440E7442E62E54504E925BC805753152A1AB8FD25D317A6F2A3B4C2337E5F2F550F928C87FB59FC28E5595D1B3BAF3ABC1065A9A9366E4573F391307CBCFE20255DD010E7E425B93427DB7F2FBD429E41D4C82887873EAB9C1DBEFABEEB03A045B99CB2B583B22DAAE97F6553252B07E5B13FD0E240E52637103FB0D404451F6DAB9A32EF3087155F3D18208162DAD87E7F52BE3685DBF61E663720BECA8BBD38D0F1EC8C729E8AA75E472050356840E5D553FE7F0F523FBB618E0E3641102588F415BEB48056A3C60E1FF260A4980BB9BB5E06E20C6ABFD6B4C50A2190A1BD7B0B7404FAC4C272D39E651DFE6371B7A3CFEFC3EC0E8EC70A2B07E05FE2C3B4ABF46761109E33C1B7A53F8756A25BC9A61AA8FA54A03C6AD28C2BE9DA8385229AA5EAC1C8190E9A945D5E07D7B2AC3EE72F4F69210BC5D1416A074BE5F198EAACC9F7533C411FDE92C2209D3A08D641EA2A758EB9B8016863F71C0B0A5615DC9AD09E81073CFA5213628E111F6D9D623C5593A95DF45F37CBC1D413402CF5D95B0DCE52C427BA500B83BF23712A32C85D88C9E330C7912451B5E0AB130E751C94028722D5DAD7C38CBE42F11E74D04EF823307CBF60F2C26E15451AF27F9C32F1F39446B1188DD7973A60F85DFBA453632E82054F659C14145D6951DB4EA1806995E43A784EA47A9C6F650613048D175A61F6A0E681423038DC56FF16E036B018EE6F248F13E8CED3CD545EC45121B537EC7BCCB9747840D86C5AA060B021C4E7CE5BC8E31DFB9E8B2ABC787C94AAB4FDB73CD90920C56DC8CAEC2BF13187D958CBA90B89C7900596A539AC72ED496A08FA01A986359B5312755F8680667F9BCD51D999489E485C50071FE3787B6D04243CBE497AE13CEB482A012B12308958A06558F88B45F6800ED7A89E19E8EF85E8D347C017ADE5CB380A56620284507DFF258A62E209148622F3C2B17E5EA9DBBBA727B3701E1771DAAF9D0AE59954C985350D369FA57655A556AD4339D5332F1AD23809568FFA5CEED95B50FA7F807CEFC47C59DE81EF3319DC2D9F1285205156B2393290C5AC34E3012F00672EB87AC9759DA636C4A03750BE164B1EE604A2A8D9ADD73E236AE422595C635FC4047346723AE16B516C76FCE5E0E0A4B8B31A0C3A3D945C72D74922FE715A2B85CD88CD496466368EC3239630D015EF9DEA121AD48771EBA948005F1D179F0CBB503054A0D37C69D1BBEC72D8D9FD6DAF13829FFBFA70A81F8B5B61E13CE48379D4EAFC63B2CEF491CAA158BBE5963B61421BA049C791084905AE12D0F527E40791E8ABB089C35B74577E97328BF0FE9E75FBF572DB93C75B2C5135F900F3115C489574AC30AEC488F22A4AE79966B40D96DD63CAD87129E14DB1E91B469E34344AA3BCC4832991573B5F38B7D3E4D4C1D6968813DA9A8AE3EE5463E6A2172804935904842CD0464FF7A204495B1318D91AA242A384A844E2B21DF71DA7E305CA160B27B27D0D69EED2E9F9506E6792A85A893C85317918788592D13A6A8F43D74DAF22F649326BCCA26CED6FF78CB67FD90BE010CBD2434200B77257F38800C4CC921FE73CF465163AEF8FDA8522A17D83F48BC332FB9FA21A3CA1762035DB3E05BEB05E09C760E59E3B506E02D454ED318E8EF6A4763C675F5A05B883012610CA811F055D53E7B3959D26BABD76040BE106CE0B523671AF92834BF28B4F46D7851CAEFAE5EBD3E3ABDB024E7201904D7CFE323F37942E7F1062438D4CA71F0998D73DE5B4AB353D0F72A3AAE72D310F0C2AC02839EF2675C29E43D276A7DF9F26DD9A098552FB6114F1B32C313A242EC7CA3458E3E29CA4BEAF469088890536D22778E39BDEFDB4D819E081AF0B79A202237DCD9CE5B0021A06F623785D109E4D1AC073F5C422571D05BFCB4F53ED9FA9D31A81472D8D5754B40716A08FB086E5EBDFCD7725FCB457DE65049B5AFEEC063050E1533FE261CCACA1EB60470500B9FF6582A8EA5F100ED4D3EBF02B7C071B463669EAE629E72D300BEDC2904EFE3E564FB213B12B311EED39D27F7D409E72E4EB4664EB79CED06B4A1DD89209EDF78C477E9C30F1D965BD8438189123D18DA70BD95EE370AA9869D0D53FF0AC1B31DB4B52DD3F15688B04BB279AE95653D86E7721DA46C4873AC99819ED1AF73C7001D1600E0E3E6BE30D1BBCF3BA1312468A0562036034D08200D786CD9A204739176A4760AB986DDC54A770DEAEDE566F6FE9CBFB9F4F00BADD8532BD302F5F1E1D356D695E8960396D879E7F8B5A02BFE33EA1F42D79B571DB676959354E32B8247B51BACD8FD9AD1A516A74AA1CA868380F470231D4BCB45AEA675A0C8D23802602D93129D80EB7C45A139436E7E12CCDE65ADE718B92674948E81D9A85F1B17772490885560C2612A3077F4874EB0EACCC40F7A84C577C77906B18A04D2D60F75E1B76A5CEE8C204519F5E22403A9213EFB196A3691908C2418E41799BD56ADE78F428B8211AD4596308611E6285BEE2719EDE7A6FA0E5CA0564F5B126CABE0960320C5EA55AC9C35FFD1C664812AB82C99E9B6898948FFD028FE89D6979DA53B1004F4EB51EEF0A6A54A24393D05CE9E41DD3A3B48132AEEB9D3E04124569EB586CEFF3A510232E5784FD366CA2700203272A0B23F239ACD214E4E604E1AC595B549777F85894C078F7C3AA01D7C4DA1FD1816A77B62E3F89D71B79D78E7FB1BCB1816D271C5FB96D25152C845A0F2BDA994A8A186E66ED4E7FD210788A15ED884803F28ED1FD9F356280E5F50410CAB7DE7C8686CFA31842370C4333342B5939F8D93CCD84899C0950119B153B636EA03154F50D0E7E7599CD0983446EE5037B7C98C277EBA39D57E931D770FF9B7015DE19997AC6379AC56B43CA8003A4E64AB064FACA7B9076FF886CFAE505EA06AD7607A6D99FD437079871D65A4B5C6945A621E52FF7A09C925B25C73DC29A54257DE3557633A99FA154A696952F5A5728B7BB88B18D4D9046F93F858113322715AE9D4DDF301AF89430EF7D7CE7992225AFFCD6A7F0D82B47DA3279538C2AFF456168DF3EEE8A204343A16B91B01C7A8DA8E8DB74A00E942052B5C32332C68744A2DBCCDF2879A3B42E0E85BC79747C88693321BB10B8F782FBB0053F021916C2B7D1E0CD92E1D2FFA82E74AF018C449110B5A4D34F95550A1F4F90031374A54E9BFA418BB089D0658AA797F3DFC31726B28F9342B01BDD6125542ACCF73B3D8E0894528241BE95338809B0E5FEAFEF5DDFB1C9D9F50139175AFA7A91EB33B0064A6050910D313265FED6520A39225606B6C42522B8283BBCDCB51FD7C4546C4119B68CAC3C04185E65604F39C4E6A39662240438003F453C23EDF4549D69125E4D1962E34281D1E7DDB48236C0AF39CAFEAFB7A229AC8A5430C48A90E2DBD24A0B0243629604687516F720EAEC2F1AA94F16807C8CDCC8ACDFBAEF3A4D64511B8B806139C61E8DEF4A6F64233CF7725A7F49C8534A35C76FE4BF28E24329367F4112D06E468BD04D6D462F3C41476ACFA0248B482F24A573DB43068927D41449ECDD4E0E88F25F0CEA177BC35FB300714210BA159A026E511BCE08D0DB98625C0E49C6F6E0B276462BD0262A7D16DC1A2F8DA84EEB89C84CD9957DC2DCF22C17A76BD0DCF723566F8481F6B787174FBD84875FFF722DF315F0707A89D4286160F830184196F680F153A8C1B082EC9F964D3617505D3E96DFC80FACCA3E4F3EC85AC4093B38885F9C9FE5FBAED14F5370B2A2FD155A896397EED75DFFB322954462077544468CBB2580199D7395F0F111A8B1AEB5E35B697436CEB8CE7CABB307F60CC2DBC434F761C9787B9948B82F6E8A50D67B6B298BD70CEE5178DDC175BD80DB9E8266FC79252BBD575B888396E3FF57CDDFB718D6972C1B3F43B686B5A2AEABE3CBD1872F51AC2FA366EDB8717C7ACFD6659B7F69CCBFAC12596B94CB4975D4C0628F9D18E2818119B55E21F4DF17A61CA3016FC40E95A39B2FA35821FF5EC114C214BEAB0EC7D00B804E16FC6EA8A0098F23C959D1AFBDC4B147DEDEFD40FBD84F3165B1C99B8C6B852FE06248359449D51AF0F8D7440346BCBA592586781753A1CA768956F0D3549A2994A9201127B1D8EB836FF45D83C93250BA52CDDCD7E7BA35B53D1701DAD83134430F19805BA8D13B07F15D57C0F7D3BD6DD6FEF2E703F865C04428839691DCDEFA6D416C7C03BD5BC8107F5648A7AC5FF51CED10029A298B6790F090D095E5D7E8D20B1C54A4C9B9AF8E8E8B7DFE3561C6883CA2E707809E3C520D8D08C7C2A78EC361F3AF83D2292963E90150AD8AE599B8767421675DDB8EC860BEBF765939480620E5D65C6C033EDED4288AFB7805AFDAF4D0A8695E74ADB1EFC2E8DBE37C1657404B23951F75433358872FBAED7A43ADC2F05BCAECD83054B0E54078BA28475942768429C74830059504BA5D0E9DF840B82BCF232947DFCE701E79D7AD9155585FF9D02533C4A4097054DB2853CEC76F18166B1441E0743F1128945806E7221C05EAFE6CECF09A43E25FF8CE750623972B6C89343D4B38FDD4DE52B2D1C7F84518198C41CBB065E87309DE222F38DDB00BC20DDC70190B993B6BF95AA8BE1102E948841BCF9B74B95FC7FC1045DFC1CE016180D989F1646247C9327672695A30CA8980F596F3F44ECDC80B6B3ED2E63FA8DD8ACC77FF7A56788570586AA40121152BE46C08C39A3353A88DD6B0E496790A42E96C739CAB2BC9DB342D857DC1EC7D0334ED3AB11C004A5B823FF7ED582CB8439A413223B4111E959133059E8B697334D4E33B7763EA6A042DB7983C375336DD351C727D52BD9EB39A1B829304F608D73F941E368CA397B04C5B4A4DABDE22F3949E87417B1D66AD3E71CFF10678B170B04020D66C499542A2DED123502853A1350FA14FB26BA2B273BEB26080EDA1ED5FD43554670C276E8F6EDF9F5D383E52B14A8F2D5C1F1177D922849DCBC0DE767F1DB819FB9721F64745F15EBE9CBD0526E9BC2F8A24555158CDCE5EC0977CA463235D0BF76830A4A26A33659D40A04CAC7208769E8AEC30BA8C6206DC92CD8A5E41B1222C9FCC4164712E5FE953887BDD44F76BC5A4F008ED2D6F9E8C3929F7FC5BB360491B99F8E9A1E17B18BE9F991A290B56A1256E50D4F267B57B182FEE84C930E2EDF2DA4E729C7CF227811207BB9DC4822F774B1F7C645DD3348E3B8F5A794936194A3261AC99255BBEDAB6E6EA8A1607F18F70C3E934301EA94E769D3B416BBC0D70EBD5B1595DB1DC0548279DE6E88B656936F5FB6EE788C0C5A1C0F557811D9D77D50EEE52C62A5283C986056B26BAC05E2690AA719BD9783BE43BE9482419A2BC3A5ACC920FFECB3231040BDB964EBB3D815DDC4453D29A96BFA8092F56C75FC18B244746F86C3F6922B381C3D514A240B8F2A2C52256AEFDED588A2F421FEFCF4E19F498FB4C014BCF532B951ECD439B8008B2FCC73E1130C5EBC388DECCF4494060986194C6FD5ABAD046427EAF9D24F42363DFFC24EF843B03A9E6860F1C0D52635F37D4B90F932308EC47C7D66247C668E9404676222198FDC6B88450BBA47B57284A0C501AE80DE70822F4B1675F3CC248604E5DB518BF68720C86769C5B13B953D14A33C408FE3E48F09FE5FD14949FD200F5B942FC180C9245E682134A4708B2A1C06595A26ECADA79EE2A95B4744C40113781F4C79D2DF98F75D1CD5C418A4A363444184FC042CAA084DD2A7C7D31004FFB4F7C0D92CF5BF6C48961F5EE154D0EE596240D41A2B06A1911610452905EFB1AC1D86CEBBCD85E431CE699143C0AF6F2935C9C65C4019E1822364964CA514BE3630C3986347199C08C4E553BE31B74932C3DAE4391022204E995C3603C4F456929E49E00E196B673C0913217EA6208E1883F67EC404A7A74B58B7A845DFC82B92094C732A69CC850FB7A057E54742195E2DF88B5DAC43059B896F98242B59238977576F84B1DB7D61BC2138426B569841F8F94F0FE2E7309493F17E3D6A599F171051896173DFD322BF52884126FFC191E4A3F57055CE6952845ADD279BC7850BEB147CDCB937A46F65C239DF2DC023AEC58A35D19A3C6952047A6DDAC0086228737DF706D7759DF18CCC2B24377E66301D653A07DBF17F10711ED7E038A12A7E45F1561095704FEAC6411E4D1C0DE15C1646E86D3B14C5EAF43460250E07BB2E217241B581984DB1EB110D341D65E151B23E6FD1870763456CEA4FD209BBA277DEA7E34B3186CFA7A369DA7B038C2B6065AE325246052F9735AFB849335201A41F832E6BDB0002542D99FCB588F96443306CA0A598C2842E8A4289B5B9FCA6A6184B796257035E5EF9F1BA05408796070029E5B06B99091D91D9C300195AC7F7305B45DFA8B41F094CAF85FD9A508F2AEE4E03399299D9EFCF0FF3B99C3C1C13C848C8CECE924F02028E6F5BAFC1513C9530583B3BAD6DA2A9C4E1DE9289A3F00E973B326EFDA4DCEE7CDC3E0493CDF2C9C50C34D64505D321ACD1CC9A727019A43A73C1772C2115A3C63861ED850164FECB7DAFB3F138E3050F100E595A47AE8258C54BF0EF6BFE187E1C6576F8032FAB8134AC591D75F8E64162C62C17EAC740CC1E3CC4D7105D87A0C421693EB1BB2BCAA18AC225F8F927B68FF1400613EDE0669FFB45C4B51579DFF39592B666129A9042534AEFBA29F300EB7EB4A9D57722DF9695298A50BFA1E1039B4C838459A0D95A56B98154CFD90D6E692F32517B98787661C8831B5ED9A40EB18B0D828F6243B6B77245FF250E01636CF94821E7A7475FBBB2411EF6C00E68084AA266C8F1C3F04B208D419E6910FBB2FAD9E270C67E7A07B8586750D599B6F99443BD1017C4210B867D3C60E18880324FDA39BAE1E51C7CBAC3F83708DD8A9BE8D1083FCD9EEEDD08980946AFA1D0B46FC2ECC7CE3EA0E8099EF2BD6E9BD173EFEC06E7523F59A165205A47DCBE5A25C62A840469F340F3A1193153A4E66330DA562C6937B319E38B85BEFBF846925CA51B4007479D7332397759625DB4A83CDB8B153854BCA71CEE0EF0B053A2FB63559F0F7B7A9F9F1195EF72642897260AC8A0D4231A696C834E1C7E8BA224E3676F4FAC4FEF2EB93149A553A24BCF98ED8F88505825660A173A5B286F3950495509CE947FAF7C67576966F4674A6E4CDDEC4A385AC9FCB717A01739BD9266994DEBBD292763A10D4944DB313C3269C34D8CF8B3ABFB1C0D77948E0D7555382D8CCFEA7C5F8AA7B27BC62A6DE6ACCC9B909B62F8341415F094A0298E50BE5C19BB5D4B7AD7F6C7328E7AE67EAF0188242400C4998592E06F478F1C3A5C0606F282970BA4F11D1E39B891B6ADB005447B037305681A86F40C3F6198B278C0E0A829E676A05A20A1B9E9DD97BAA8F511DA2B9E68B6A9D757AD4EA3540DFEB25A18BD20607C0436EF6F6B9175CEA5FB217B4E642DDC0530D459BAA2E0F5D979AE1666BBF7B0E105A924E94618B145F7A92E1F09EF31CF57BAF62F30B4EE7B85F80E8F5272FE227BA7ABE1CB23E9445C59348884BDB8B899B11FDED0B434BD5862611CFA30DDEBD28F39B6EB2813EFDA7C21719A28930643B48498A557D91B395CD3B7DA148F6264BBA3CF364BEE8BA6F581610CACA03E8CA12EDA45C65E48C14EDE5FDCD18E1A6BD0EED1427D3AC0A9E154C9B7A71E95E6344F28C0687DB6145F0BD156EB5C583E093C5B5CE34A73708D3F9EE4E43358FEA3D7F136A3074E2DBD861B5261567FA68B437CA5ED50D2435721FCC9C1BCC9A0E51982D39E05541FEE46984CFAA311B4FB6623C80D21451C87D82AEA36C14A24D570E14D9066A1A1FA3C5D911E45092233542363906725833D755E0BBCF8E831DDDE8D4ED40B14F6B1DBE0BF79B9D10CAA8C199A4EEF779E3CFDEAC4CC92F19FA184E2296A872E93BB08684C1C7FB3E9CC58D0C84275F4F32C658D541E75BCEA2A18614799D0053478AA7156DB462DE38D3172CD9DB37CEDA4A6B2A71EEE2A096B439407A956033AD1819E99A862B45F6FC9FC8382DE792C0C185A1B70CC4F05CA496F9A4C1293B84FECDCA3CD08A37C10B0B912C82381F6E0AFAE14E844AFAB1471496B47126E79C795785BE587F03B73FAFB238D37D0133FB988FC37D5F575221A5E7FD2008EBD22E2F0510B44C857A54D2D0C4681EB4ED7071F5AA5BDDDC28136D7344975077AEBFB6ACB4E1D59BB4E9F9CCB6198CD21D93C47C848B75109117FA419B704F10E25F7C21AF0D76A07D0B445F70757F48262C0C80344DA2100E6AF882593A90F13F9798A44267BA8C050BA6264CCE9304ECF04558A96EF045DA5F41432FA0DC64B5A71FE07220905B8CBEB825C243BCD8CD14C15DBF3CC855652308E74775DAF509236C145700272A3E1CF7C05A530E9E15AE794182C032B572430901E3E7D703C0D58E85BF80D63136AC5A75F2F2B9A4220DA12A0F14D03E93C21E753BC48BF4E1B1BDE8E886C9771B65DA19967BD208E02C165FE440C248B0C12705FE5D6FC34FFD2ECEDBE0BF88553EB56B9136EB0500FC0D47E14027041A30B497CE8759E3FD39C79EB45A81CCFC61C1F9D7238E2C8DC2E172993B5233573E6E38687F51CC791F23D60E64B39D89D7898DFD5EEC6385240901270A707E32C01C9EE71260C239F66AF82728C5B096624EA4CA1DFF1267CC4E72D90010B7C437738D115D78E9A5E27F15C1A1ECEB252AF3E392853809B45CB2EB1EDBFD86A69CA05C65C95BB8A54C9586346D585A9C1DE891780780CF3E0CE444329CA1EBF950D35AF9CA5E59D7721BE78873B6A2B684D73892F22604ABEA02C470E7F7D6025502FCE672AB31261C1815B0EB533A9B38B4108393F9F0B74671F743C0E96A1C7E80C2AC774CD16E987D29A7C4A70AC06E01E022B163259B7DD41B493C0C68FB3F2E37EAE10A577183883DF5C21127AF8D22A7CE4DADB44A74650ED505E63D72E814C114B8CAFBB532EDF9330E93CA4B42D57C9C92DF4DB48612B24BB8EDD79F7692AED018B913F445A06F212A93D4F58EE279A7032E288B20DC2B45378377401700E72EC98511FED2458CBBC8152A27CCD50DC46571E343FBF09025C02E57D90B4977564A9AD455F0D17B848E1A67AC9F427428C54BA8A9281B7AF2F0940C17B6CDA4BA5EC35DB5ABEA35047665A086D99226E6342CC5E815CC243A85DCBCB83180A2F88DDB3F5A871D2CDB5D88A18D6EC7E32595BF9D10DC327162DF99D976763FFF75F9F45BDD98D34C352F8B72C09D84B389AF96B7BD57327B9B2A762E201EF5B9DC3636C7D6991BDD7F5F0E1058744CEE295A75008C9D7A6199ED9D9CC0B4136669FC5DE005585E49F3F9ED6AC50981A5ED65C19F6987AEE19567A7D71E93A8555DC752C1E87B8148A1C2E245A8534BA5EDDCEF95120B85E9CFF88912DDC34BA88EF9F31DC884386A562B664DB687126A2B21B6AE7C3BC832DDD97FB06625C7B94B63372AD7E75A945436C327400E22E8CA3038375C3DF7F80EBB9B30F19EA3C2F46E8261B9996C979E41258A4A51AF88BF30A3DBD0C0CACE5236B8B8182F28516D17464D039F65149FCEDFBAB507C25710FD3A0A7CA02B038B915D6997757841F86F4D2A6A65EA118B803DC324644F16EE62809705243BEA5AB21A79892EFF8E98AAFC57CC0A13141068A1CC039873C2BF5931FA9C74528549A15BCA7CB2F34C5CB8D52F90AA063E8A4CEFD7ED2EF6EED418A67B05E1A0AD7C70414D0CC6A3018DE3A51068AC4F4D4D682078A9180FEA6999A28D21BE6CC56E04E21057F3AF260D9E39C150292C61E8DF6AC1CAE8C67EC40187C0F2BE9E40755DB7ECEE2ECCFE3EBA9A783369E4B1FE9383124B1AA31FE55C7FC58602ED2B981DC692F756F7DF13FB86BBD2C135EB7BF220FE5603FCDC9222F587B6F095292264A68263D27216D08C0B24188892A7ABFA207CFF675F24CFC3C1FC2B1FD8E0DEDDB33E345F372B94DC6DB2A1FAB943B28E0C52FF624E12B9FBBCB969EFB569E5E5E88A3C8CDC223B15C76D98B594E23792B9587D995D8A9CFC5E895627FA843C402D639A29C9BB45C34550F3F4796542827BFA400A1CA1ED5999C6F7B10A780336163B0C298E50461FE12C1B2979BA11B7D434360EB49FB6592BF7E46CA4F1342858AD15CE9405E6491C674FBB138AAC8CF54703837457B28CF8EAA4827169CEEE02C7566D0EA09DE340C89CE405A0DD4EBF06D0CA902C1F369535042D40B6706C5781E0CB83E7428AE6B77851DC698C25C43AB4878889A204B898A2B2D64F4AE34B27C857AC521B8C14DC2904CC0C7D425B9013D310BB987D93A1776B61C5A4A3D22E550CB517E4F6F47E8A4098DBF0E74AC32EE7CC0CF3FBA9FBEEA53141DC10F78060B85B8DF72772D196E54CC46353C9F9CAE84ABF449A07D3FD01B457B8DF658C99F595EA66C3BB9D5833F5B288540C8118A4B61430258520998767A3828450460FD2991F8E8FC879AAA9C9721C940D5D6281AD66234FB0C262425BE9961C855EB6474DF25CF11FD098A4D55666CDD1EDD6472C67D01714DA05607D5C970BDC6F6D73409186B92E3AC722CEC7D5CA9C7F69E1C53E1EB9C88589E37474E14DD1B1EA7389FF8F14E105D35C48E6185A1743E724038E0F9EAEC011AE60634B3E98FEE1EA8DC8704CD197CB410A864DD45527EEEB6F117CCF75AA43B4E78CB0EDDA9BE9E67346189D62C23518A77890EE498987E59D82A920144EF5B4A297AAC14CF68B25865F1DBCF87883A8A0C9D2E2F3A303E3EF47230DDF39C119B4708BE7F48CCCD9AAF5EFFF4E82AA816CE09C7FDEB9AE989A7B3EBA808F94C13A1B9F57E46DCAAF58BEF0D54E8C3D44DAD442BD8FA9BEB4052FEE892001DF6043CB809B6B767B7CC5773FE43AD13F7B0220ADA0DFE4DE6F2CA30C12EA77D0D5BD046252C0ABD8B709F668683D33B557E6837F9B9DBD2FBD4E3E573A234493FF70E1A2AD4527B8F6DA4CC69D19DE2188C6E7783EEE68BD95A3FF6ED077B44FAD308D8FD02595AF8B82DD547C42F32832ECD41FEDA085560135082536044C4BA2CCBF1101BF117DF14DC9AC2234CF14D33C3F0DE98929CD8C5C8609981CF7AB43ADD06D7586CC449A946706E00CEA3F3D089CD86A2E2509A82799AC07FDFB5A1D87F41982FD6C06F4F389DDCD1F62456B5AD42A9296132E7DBF91268C422398D3B33BF577EDB6C0DD4169AE81375D521E9B638A47089AFD4AE70F48B8C13C0A3604D435E9F8AE26C6583DA87F8CDF5267C477F4265159D7E4AE5413BCD21B72A9D960CAFC03095AD26BCDF1241E39D3E139FDEB95FEEEB299FB53A0F5F5CAEC772C5E86EA944D13F86B086273D24C304AA43E9D90E3D01BF0B38E63D4C8D8A878C0369CFE7B7E6BB31280E39D702E409D51EB413B160B1C0DEEAD0C875A10B761F57AB0380C9EC39BA852DE420CE0F066B29A5E0E60F9168B16852BF9E4F8C2EB2D31C6657C1DCE94736919DE0C118DE9CD711D38B26E054E32968EB5EFA7F6FC1E46C8086E1ED3C6D3CC367BCF1CD3FF9616D6EAF7389CE059C55682B23FDA8C6231B876C153988EA45E98BA0930BECF0FFD51D1343746472CD621FFD4E30D221402AA802895D78FF66C8B4B363EF7914B2CD3ED13D41BEFAF4210547A67A1845D5B79DE56D68C32A96394B5BC541A29B91ECD707A96381E2DC3654DCD64697CCABF240B14FE8988AB57949F1736ADDE2BD0373221356DF4E4A576A57EEED910F43F12D180818BA40DFD8DEC95B5619D0941564C3C816D030EAA0CE5A7753AA0B7AC4F6AF1DACCAB34FD2EF430C406A9A99B833028380E79C3DC9DC8C7A57C70BF7893CE36BC3CC1C868D2BD6BCA73FD31C28ABB1D54726CFDF44D029EE5C8D54FE292059B6BA626A4A5A45D4AF457D79BE0FBF627E8B060134AE881984F1E05F80FED101A006F415CB62E0C642526D9227028F85C877632E130AC434BF3D850BF2DF76AFAE9B4B279BE12AA1E50E77F44A3F77A970C5AD9AF12210590A2C35C77F1AF9B84259901F12E97B07238C6E94602E220725473EBE19665771CA24D01867F218BF9DFFDF93AD36CE14DD91044F9E9892BB43B4660765CDA4148B16EC3CA870903E98E7042D2F2538455C72F98A1359A5D2CB307CF8C0234A4029DCF1D621D2CDA87B098DC7273A233F82377485F92FF566B1729EADC95FCE6AF76467B7F26B46FEC2FB63A6E7BA2079659BE41952A262ED34FADF6C43BCA93AF71D938C89C02A0CA742733F772FA1BD25A3547A34B765FAFE7E0D0A1C4CEA765DD04FB432204619E0B05C1C8A2F63E4DC87FC1B4D957949FB3688B7EA2FB0BC6383B47C4A0ECBC9551D6EE2D7389E165EC1F2E1D774ADE205C5F2E06B7A6093014B79D92AAED5A88AE66FE9FCFB6D0E77D9864A4B4A45E68E72A31335FFA59B69F297B1CB676138EB980D77B4D45CDFAADA144C4DB8F909BCD72E6E2B4C9596A2F4D0472E35B476D464DFB4FD36E3960209CDBF353156ECE864386464CBD4545C9D44B7EA091D9130E61DC3F66286D41CB4D75F96140AEB00C2E04B9A23E9A3BA0D2BBE4F68FF8232BE3B5B2EFE13357758C94DC953E1AE68521FF749F743A927A9C01E5F0D8792F5D15959DFE83C2299F4A32B84397E35D0C81E02A1975062DB47B2A377939C1AB2A7E9BB9B23D7254ED67FCBECA18BD4C0E98A924DF99C4549BE498401B79657FDF499BC5967F666E657EAEBD2869FA394503324A0880242093C2A2E9F7DE959418989157C63C159172151BBAAE6E48166192F2BA5F982CD647DA7A2DA4D193B617000266E80997AF5CCEC858C9CC363F7ADE34315D83BBEF69AFF59B14420F29BB3152778892F84EF0CF88CBCEB350ACDDFBA27B61EA19EA0C849D2843E15EECB1CD4964F86CA383FC0AAC0D37EC13540947ECFA3124E79C469DA76E8AE8F386CEAA2FF02F9ECABA82914E99BFD791A42B2A2BD9DC5D754D8327B591059E7560B4A56F020944212A140D15B1F745E9EF221974B960D72D0D34750D892D4F5032552AF4E53EABAC05208E372A514C8A570C9EE4E533A1DEAE5807145B8AABD2BF920940BC2D00A5C532B08B3D5A8B908C1B1C84A8869779585B5948A281592232C1BF6B4045B2847484688A127C8329889A611529CC92DB04628C66E8B43FB5D89C221B170610ED2C1BC7647F0AF3BC6F510BBD19508214777D5D9646048027ECBCA514B6EE9CFAC2D125BFA899FF00EC8F3EE4F047099ED8CE355E6A3CE509664A35984AF96BF1BEDC88F41359A8872C9D1BB065590CF56D54E2441D29F815DCD6A6E4EE40545CF5E386AAF20E4E8D081BC47A982AF390A04B38EBD1D3FD8AC7981990FE1F9589EC58A06805D981A7CAEAF1DBFF020935359E9CDC1F42D8F1F5EB2A7187ACE348E88C124A96A2E6C2195F7C5F5354D990E7CCDA0BFADD4C6F1E48F6865CBDE7B6EF858861D76E42A8B31B2C34D497281304C44FDB05A7F5D6A0540636FFCEA23A53F4EB640811CD1B45F841C56270BB8987A38B6CD5EAE249D47B3983FBDC700A547FBB45D1925F88C3ED6A95EF55AF7424E6786C0474E9A61A00CE6A8AB1F74BA8FF07506D501EE652DCD3DC64C6775DC9572D098899E078D7CE20A253B8A85F9BCA0F10CC669ABC0A347802522E687E9622CBFD3EAF269B0567C22AAF99AC3CA4F13C5EC0B9E614C9039F7630023BAE9A46E3E78AFB6A049D254E9681202A9787A93A69AC810D2B6A47FCDF1FB2B32C5622086E4200A2E78A15AAC81EAEC06265F12C6FEF30DCEFE38EC7ECFEC120A2E88C4DE57E4B86E0C3ACC6D94143CF994904DB06FB7C7EAD39FEDFD4A4898C53174734D9CF7E3A83AFB6A8DFC14DE73337AC934BA01FA188F98D4C2A0FE52ABB5B3CF3C0CB8550C4651DD3ED4DC8370DB76D325C882883289022B25EB7EF4C52858454428C01141F6C8D24EC47199202213FA7A75841167769C0C8C7D4AF878B665A43C1C6D2830B546E9F5B6CFD7A08E3DBB3704F2A21389DE7668A037767C262C84B87CBCF14B61953952DDDB07D07EDF52748B0D6896292456B0EA1379E7E7D02E13E668C9EDA5C9D72D54BAFE4F5075CE4AFC058A2971993B84E15156CFE151038AD152F63D44C1D2A2795675E66F0EFD25E0F5992C632102627E9D7C203372468489ABD1FF020EFF9DA1B8B59031E833176F433C7A5565F71AE795EC5E317F4BA6FD711BF06674CCEFD0AC439BABA37E6F6065C69964BBCB1C84148B09DD61D4F404EC81646B7C39C616D33C0C22D2BE87BDC1F89A4AB9AC7417958308F88A54FF598E4A219B7D67CAE95E024493D74F4BE579C0FCAE3169287D577D093BE213AA827478A4CE94C629833FB84438CF7EF831FD9411E63D34C553C6FED0C3941649DDF721A37F08CC0F581C6623497DDCE4F28FB88CCBB9995D4CD7D361BE1B13E0C3715A7220F5750E53A5CFFC8B525F5E99E366CD4643FD915E9280D49FAC932268E96E3E55C8FE13549FB3DACF2CA5E70CEA0029C50D471D284E05720262B100A9CC9806B5DAC188F13C74527FE2A4F8A6806CEA3BA481D49DE9A6B0E5705FA2D6C58B85FE0C7094BD2423CF2E40A144CE8C2E13D5769A72AB870C26941622E71E28DA619104B9EDB7E9302088C4431DB4903E194D79B89120E6750B743FB32771FCED96D2188382A8074CC6A92B9558E3349E5C8936BFB90A08CD63D41C44804804F0A5F2618D176E21DF9AE2A7D0E170E4DEEB1BCD3E6ACDF2AB50DBDA5F9058296D438BD9C8DC5E608A9598212241D92C344F5AC68642AE0D3F07435C3551E10C35C01A59277C4BF672F6E985F533F2877AAE3E2A110F14D0A7749470ED76C566A3423F0CECE8902597A629AA701AD2424B6642C1AB49BF23B00D8456980BDCE6DF0FC2441C6F05CB8909F204FA9910CF2ED1E95B15C0B08DF7C1DBED96C07963CD821F673AF0A4FEFD59D050B27EE30F5E868D45EAE50240C9E39F88BA6E32D86D3167418A4C7783A8243CD04E950A06EADE3D9204D1B477051279F478852F00481BF61B9E54CA6EC6AA5E87FF8C9826E054992EB45F434BEBC9D81698ECF9C4B48F29D1204EAE31EBDEB77D8931DFA6FAE5461F359A66930BE6D4939F8E1A84AD6A2D8FA55F949A05133B69C322B0D2CF91C219C1CA095D4D744599CB6030B763AB36F84AE9E0BE038569B41F1DC2DF147A382813D64B59939BE695EE226A5008ADEDA3DD2D5A51FC25886303CD0B8C533647C0FC9FE1FCDF24281D8CAD52AF91044D5AB997012FA04C7858A3007187E11B3E8192435B9F5C54E2E9C700E4E671785FA1F956161A7B6D9670A0D74201E22FBFB4297CB689745FCF87608918F5B1EC8EDF6A2EA4ED464C6CA5E70B038833451A062702FD1E708B73E08231F2BF7AECCAE74BD80323871098380328573DA4FDAD9C97C6B018F38FD420DE205EE8063B46A312638483455B320462304751C4C61C295609AC461DB0562268C419A0ED6CA2959E076C77B8B559B97455D366408ACC13E729FA31EB385862919C04C62F84990F04873F73EF5FF53DCFC142C9028256766D20CFED41B49DA4EF7305B367A07B436DCC4B62310D45D2359A7C3A18E344F4DEA449101DB7FCEAF3BAF3C8AA6624AE8486C4E7213281B8EF42C899A2C13D410431F7B2491756C9C2DA2B4A317C6195E9DD7AE5FF88FD5B8C9727B38D035BA8525396D4516DA1C31D8AD89E8CB49683809CF0097AD0E4B2FF613DD5714F4E240899482CD1EE60AD4BE65298B99D5D971AD4F98AA3D4A36DF13638B9A20641CD932FEFC4D38CB27242E19C5C9875E37448E34247A9E6B40C902DA6A5F6D2636CAF0A4C296E4A8E48BA16506C1958FEEEE31AD7BF07FC10A0ADEE8C1F8B318A52AC3E22007F3B473E48D6BCB1AD74BC4430DA7A2E86000ECD3737DE800520D6AB2C31A7771DA19B94F9A39C74D7D37DDDE0BE443AB21B4C5AFD57D6C565295DE37FD24E79C94D389C7C52B2F0F9DB7301BBD2CC52AE05BF10A26BF545C1D69F99D26E45F7FA587C63CE09714096D76AA272E4341A90836868CC54E3DBBBC9106B2864F83F0764DCCBE581645115908671D2DBDB2D4DD078FB30A6CAA6AB7AB8C7F6D981AD86665310EC250A7B6F3696982612E4A63FF08AD774AB6F4873CB6BCB8DAC5008FF74E289B83A4606516B6B380A42978828CF62075A13F70D4AFA3FB3A4A386F3F5E4E03D3B92C8106D5ECEB24C1455682E786BEF3281CA3B8106CF58DFBF3B67A5B870BE1EAFB6E12DD5F6E1C932F4F0E496E7C843EBED6DD4D52E631989EDFBC31CE397F0785FAD4705EE8904C50E0889DA6D1286E15591EF68300494F3CAF69311A470DBFC597F62B89325E7181B8596C2131D2EDB7D79E2C0750D61612A9738DFA769A933C518EA1E8875995457F39140A2CAAE854FA073AE0F7D4B875AC36148650802E9CDB171147264A8DDB3CE995F68C7820FD13CD35BAD60D693D0F3E60DECAC213FA5ACCCD21F298AE4006868846CC693D1A6CFADA480800FBBE3E9482DA08515DB8DD0BACB93D57660122F9574500A2177D630D486D91293256183012115156342A87B9C3E6AE5FCF9F69ECF87D84F4F0C24532860F8FB3F50834066A8DF545B9EF341D8067965A54336FE07D6ACB17CB393C4755C65E33DEBB197AA6D3A0A41F137DEDB233F55500751FDC38ADE9BAB8416831433FBD0193D2F771CB075E0616FA5E5FBDBDF6A08A447E652778CAF2A4B2CF1BDB202E60A15D7FED6FCC478D979103CF56613A52E811C63BDB9416439CB63C02E368A3809651D74936DE91786AA28331337B56D4E67226441B68B1E679B749A113C0B2632F0E1E577F0A0F24510314612F65E132C7F5F268EEE1F00CD87F4D72DEFF69EA5C3662D4D511ED2B97E887E12357A7A0BD29E782D9A57FB6462A1B9268A3DD0BB05753A05DCCAA24E2E2F674CF7113DACEE4DF88B2CA92EDEC00F60FA649946E70A991DAC38CCA762D4F585C0DA617B2FE8C7EAC6B90ADD7C73678D73B6D40B7947C8B8510298E5B6B29BF47732AE78F059A9F37A913F264F89BCE0FDD99D5F16449953EA93B02F01241293BEEB35222F1D2B8E20F80C6D8C6A7FF43E06184DB4DF65E16EAEEF85EC213C5BD07F2E5AEE11E86E1779B1802EB0683A2B601E565A2C1FAF89BE88168151E4AE62486FA88CD02162BCA08665618742508166A8EC4E285811336365DBF6B57B47887B62A97021A9CB06C35EE15F08F3CC36CCDB2F39130E4E89E96879E9248DD91CE84120C3F8FE51F857ECDF89B13EFC9F05655B3B1677E47C9BEE73FE41D3ABDD9E061EA94CB32EEFEDAF30D1CEDA7E0AF73B05AE3F4BAE235D0D00C7A3D698E3083905FAFE548D07423A440B2A61D80D577693A3E27FFF40D93B374EE4FF666CC549D99FE420CC8BF048BBE1D7EF26629CDC776E1817D042E85FFEE79C9D31DC94940ECC0CF1BB111188BED1E0802141061786A3A34D7D1E18A26CD15FDD7D952FFF34DDFB9351A3B4931AED092854E552A3D28336DBB73B597A8A60A123EA6E6377226DEEEE15A24FF411C143EF524CF9AE583633084EA4A53648882E96A5ABFE8E5E074E4D975E01E7F358A7CB4A5D3B36ABB17084634294DF96788235CD39CF9A6E968AD15B583910B88E52E277BC7F86F02D325F89D9E048907DD98077C9436516369BF23D08BEA21D3B3A80387D19A88D7151D74C895EB99E0CD9DE1CD347561D7B649E10338847ED30AE603DA0221146399E24F344549FD10FC1F50EE245567F7A2D12709C4A8CC56E0787C46F2FB55EE4EF6CB4F769A8B82A75D13421094B829E61E70E04ECFB6983D4CF45B0BCB47084BC906D5E96C54FD6CCF5DF65CBED9104174A9FD186310D88027B6F8364B6023F146999DA8652B5A632AA14D0A7BF9BEE6A2AE9808AA45F932706E04892E34658879D551204209E20AE43822AF9822AFD8EF2229F16AE1682083CC51A3AB2296A0AFD6E238F229306A29B26E9576EAC823391F163360B7B4794B08449EC23734E3654F9306C79F2DC4EB5E13FC6E4836DCFDCD158F45FF64E3EBD3D7CB4849B4EDDD2A23F42169F35791F81428647FBBA4D1B0A6A524AD89350486821FF0681AF41CD42E20605457139FA257D500A2CA05951A21EFEC2DC6CD17765F136010738EF9F6A08FD1AF0B23D88F7FE18D4AB22F5A49030DB74FB7496BFAF5F1A1555290A86192CC87C1F45CF2263A7DB7A07581BA5BB4FD7FF4DCEB938FD54882D71C2D8DBBB0EC6C00055F2E6074D7D21802261A69E5E71DA18C4A1FBBE482F2498418605F1346BB3701C9E2B263BE6EC352FB0F7AD15E4D3B90EFE6BB34C47893CCD26D5F380332990F231292CC75243DA47B0D4F23FCB06343E3DD1E16FED11652A1D8E6A6699334E0471ECC44656C4EAFD3288FBF7F9F6E5F42A96308EB6FA0C55939C6ABBE9F99C36EC3D578955D643634CE1CF1AC2681EF436B156E8B8EA838D9FAAC4006AD314677137763778EBA981C3595BBB178AF92FD4C1DCA63D4BE41C94F4948B034662ED620FBAFAF24FF2DB48514A060ACA5ECF25CB93957E8D249AAF3B96B2E9C99C737B566380CBDF0F5A9579A1AE639875C4A5CA33502C8202C961F1B8B1939681C5EA3C728C3EC374C4FFE92C2FC5D64329B73EBF5DCE3D4951432A1DA26DC7688D1E4253ACC648D2A715B9501F055E190A2D5715EE95427916E5C0626BCDFB16C4D722FAE207E759ABA4425D1121BA11C39D635D9F4E5B0CB9703ED6B2B4FE8869824891A87CF3EEA5EDC29DF80F4A6261791265C3F23CE161076C25FFB2C6E2A1174F4D5D731DDBA3EF8A883B9A33803CE6C4F1EDC8622A7161675CBB99530A6C80C87BE63304480CC4FA7E75A46AB7A689AE5ED998AA47B63F41A2FF10F9EE89884332AAC8220C0BF0A5F394F2169071A3E80129E1EA3486E3E85EF1301BFD2508E8E3A0BE45EFC24084FC3B68DCD2C21AB3BEC311C63D64A5D4FBADE5D4F56E3BFF99B70C4414AB3947F0FE27EF5684ED5ECED8F6D479013B465C08232C0AB0322729840F67C36B4A38ED96A60613AE3EEE534F658417440BCE7477FD784C75069D77C5060DB91014FCAE4AA61FC818C06090D886DC793754D90BC202263CEBB8B485D5A4BEAA6934F063484671294B94DFE6C57E93251F0A4DC115BD1B734D3EA371D668428BFE99F7EE1A92714885E141C7D9F68506C2F1D7A31619DA276C65990779E0FF5EDA635E172F48F2A6787D547BB53E2C9019020261690DCDF111087754D46E5D227DB3F6B33AE49C9CAD93AABE82F652A4C8A95E4D2E54D1AE65DA5E945DE31E271C282893E2F07166361B8B4556B6B5EAD696426A47F4383577110188C986AF09941FCFF2C9586F2453E1DDF2EC9D44E0966D11D4BC1F0DFAC151A05C8B60397DF2F6C6EF7B4255970E7AE459A0AD5F63397FB4EF96C7D87E7E289AFA82B55DB5901CAD460D3630E9BB396D39F0EFA9930A6CAB9B4401F6054CC608E64ADC4E6C7673E86620E8CA794240714E35AC2FFA1A3C6876E223BF9040EC7C52F70164C2506C6F70A027A62C996EF0E384FCC3EBB364DCB1F3BA245332ED571C22046951FE09D32BFA543C5910FAAED3371ACE5EAC53040FC4ACB65C9DFCC82AA8334DAC5330D931B41869EE9D26024444AC7368A770A01CD7CB2B43E6BACA2A2FD85BEBA850A3991D1FB41CCF05A473C632798C6121BB52D1EF39F1C1670A5F21F6B934B69FED2646D7CA489D128D91B4A8993C2957BA06F35401ACDFFEDA2B0EA30D99406D5D5048006B7BAF1D48D580967778698DC152F1C9F4594E0D760479B803902E23E92D788C7C83BF6E31873791F7A23EC7E5DD28B997B5F4789D3BCC8FB4C9F211DF6B74EB11173E59316AF8578F3F74B4F09B3906B964775D9B712A7824F530833AE37F84CB215E96CEEB09AEEBB38F61F2711557ADE97D3F36805A9BF70B257DE7ACA43D3573CE9AF70753A6F0CA08A3C176F7A5920C543014E9944AC6CD8521F1B8D08135FAEAC66C65602822502FAD54ABE65CC4694265D8FE4F57C18E76ED76C49D08B940038FA776AC4FC9A0AE11D9CAA2DFBB537B47BD44736146077C1DCCD858C6E3BF739AF3A1F7B9A74BC29E632FB162ACA6298102A63377890B669FF44897DC09B82A21619FEF893AE4C71B69ED2D2F4F58A7944A7BAEEE8BAF5DB171F3280EBDB28F19D8F48420D94337A293495221D41FC111C3503B8BDD7DBDCBDF1A11AD72C0905AE487122E0E59D3E0C4DE8694549BBA3FE6BF29840BE42CCA38B30ABBCB653FD42EE82A81449E2E790B9BD9C8E19C90D4076177E043A80FD406439E55660F9CBDAA52B89E670A23438DE6894E3B102FCB7BB59CE279C178019D29EF3CE67BD6A3069E370CAF46F39DD2E5A25A6685AA9380378F558C5B25391A4FBEDD37CEF3E37595138FC54D26AAB08A22D571D5F3F8DEB62523164BDABB45BB544ADF30A83D0CB22E2F4521839707F085113ED62A993F4F3E95E7E1C96D15C9985C42A2CF59399DC5F22B9C1FD0A606EB1210FBB8549320FC3B007FA5FA0B2CBC2CBF2ABA63DE14B314E31BDE7F64993D4322F8D1FD1E8448924E2A4F0E83B7B4C408B71F625939D23A035C488E3781D047906EEEED3E2D0C15BAB813030D819D7F2E8F91A836CED008DCC3C221573DDCAA4D6CE0CA2007AA4C9C667E3923D1377D2C34F446F09001FD474B0BE05766A2F1DFAE93A2C23DED91B5C6A35A27B400E6E317F6E94EEB7C6600B3693774FEC9EA794512E846B885E70A649920535DFC4CB525930A95CECEC2FEC308B51982EF650850BE649FEE37BDD1158E900F50840000000D9173197DA9B38B88299B474C97426E57326B01CE84004E2FC46F9D4B6AF7B83DC388650B6E96B6631FDB8517CB416AEA25A111AE4BD4838D58EAA65F587A407</serviceCredsJSONStr>
+              <accessToken>201000000D08C9DDF0115D1118C7A00C04FC297EB01000000BD34C8955D308246937F0E385E8CD903040000000800000050005700440000001066000000010000200000006DF5D50D8BC2B575CFB4E4AFC1DC4677BDA7F589ECE37ED82074C3C8B733A7A2000000000E800000000200002000000099BB8946A3785A2ABC685A129E7492E98C6763AC882ABB5188CC585BCF7C7C68C0250000744328E9F71A6235C4343255320F3545F659B957ECBD9D2C32B093701AE96F4D19C979066870D588E1CBE2B4B6F52FF1997B6F5AA71D2B07967E8AF07EF006D8B9707D514DAE1F9435FFF46FFED4B85CC4FB14DE0C5F2A800BD0A58AAA851022BC37DE132EA46892B79EAA5CB5ED8B054C6186EBE0B3AF380ACE4FD0A4EA5C50644F1CC04654267FA16A9D148398B854B4113CB2D6B6C13B2564EA94439E0DA494E5FD4204B3AB651401D6342D1A4150FE45254E3F2B0C16250944E33F5DE15F197CEDCD9A8458275C865DF0A3FB879B5EC27DEB8705C60192CA3DDA80714173F95FEF803AB0FFADC49AB046DCF0EFDE802F4A0C4E40C3497B8DE992DD6F4B2BF66B0557BE46151DFFC8676D7F96B17BA9AC82308D5E8D10D9D35423A738513A2F8BE3AFFA7C889D322FCCA3A0D63FDACFEC33083BE17E8971AF396EC8B6F9F0FA13094EFA9B676A92F93A5A51421EAF553CC259BBF03B9CF35A30659389A8266E092F50AC7E3B0609BD1A09371D00607F324CE13FEE2F0052D96F4ED14727BB151608CD15335C0A5D7F530B893C45593F5ACFE0C3C83E802E90B8FE29D95918D99BD965802BA3BF0004521AC01749D4F57160AB79EFBA0C5C301E50297B94D60BB7B90879ECC5320A296C747D054AB95CFB5D044753D939F9F95E6358A4EBBBD1940FF680439E352CF4F57AD2C534D17EB0B4906148D45181F2EF18795913196EB4801B86760E474DF318A10E4AB57347535716D2777024F26A819142E6DEE6B6430A5A5C2AEF4B3D4FE237A7778E59951D185543CED7B2B1D776A705C1D7663986561F1CE60B62C74A00523FEEE886C388B23FC6E23877E6BAD08502EACBCE757C25086AF7543EABF8BA87DFD1CF7C0A32BBABF54BFE0D44A9B6ED537A6757DFB0761EB00E0DC7F3C9147240BC2D323EC91DE86893BC8371891BC79E9E19AC058E94B1AFEE07671C490E351C8E432DE0816D2545EBAFEEC8F533FED46587EED8F2C8DB9904C0F1EFA98C6B088575BC5AB1116E744CCC77555F841582C3D7A8762F01FD25E0410B34CAA7F2A02A66B1A886262E5CE3DC5487A92060861AC93B2674ED9AB3B54AB14B5AFC3DD4C9D44E9C59073E7AAFBA1FBF7C81ECA76A89E3876E8ECC8EF09F870990C54448F354798ED454D45B5CB0A401988BA83027496405AB96FDFA317A33CCEF3012F8B61CC4767511DDB726943CEBC6C79DA2A3591D347B6E1B393CF6D2D84CFC547C52516F31FA49051187FDA3EC7C8D172BB763EE49CEF52569E5CB7881D3F181A81907F6FACFA18A78AC68DC4C8BFFB00ED54E79C22E74B6EC7883456CC367CEB5C3C20023E2F053C6AB13973C1D9320D10A19B2FF130434C1761450C46962C28D1B017FB031ACE8D3015EA1D163FDF3AB1588C0AEC6C490A0605730EE1428F59BA2DAEBAE88D8C5CF2FFCB7BFDE2343A79827480A6E21194A11F92B44411C2520FCBB5A9D5211EACD1E0369CF9D2B9FDBE1F094629AC020883B7AEFC1E4B748D86871166A21D8EEA5B4CE3F2D96127D8249E1A9931E8561CCAD68A42343BF9DADA9FB8BD5312071D001F67D44A08AD628D89499C418341776D76855472C26D66E3CD1541C66933DF45D7E1B14BCEB4CA0257708DCF41CD62D42FC32FB523CCE51F6C57898F9F9183F96A98378EA82AD2C703955BCF53771B00F76EE60893AD1B3522DE399BE96E778886423967A608934F938056D0F22695A57CE0FE00C3CF1D95A1A991F0C9CE1242A4113003A2439E7B987FC5D1F4222A821BB33AE20A4CD83F720117578BA9D9C78E43A658E519EEF2028EEDD6B8CE6FBFACC12F5CCDA1C2C1CC9C18230B9EBFFB57FE915F8F8A858D262AD04894B4BE69541BE737FFA10F51E642A9947234C057656FD8D98541BBF863666C273D6A0D4BDBAA6ED76176E9E87D0116A0125880CD8380380BAA87333C7DB176604C5741C9C893AA405049D4601D56A0147BC1740115AB47692AF9CCAA2AC6057F15345180E7EB5276746E54EF090F9F5BCF94F39F654A78A3C3C9EA69EA535326CFB11476065855C0EA8FA6DAF5B88F31213D76E68BDA4EED73AB2A7DCEA4867AD5EEFACF40D688FC1846919D250D8A7A048DBE03DD9B7CAF36F6C0DDE139E27A64B6CEA120F06CDCFD2D16DF3A00FB281EB08F298A585937B306933CB02EC053F372542B5560E2DF0B89E893D77587A8578FA74D85CC0C4E01B2FBFBA5B47AEF02016AE0E00AEB6BA625BEFD24A114442C7DF25AC503BE6A71A1290DCA0158AA88FBDBA0A47F5FB0451DDF177F7B09CFA22B224E6F7CD5205854981482C9305FAFD0CE54428ABA75E382AA0759D95635FEAA12A90CE9600E9FBA5BBFB0CD6414B84A0BE79B43D6E652198CD1202C366353D410D7E27A4E04F40D2CE8F7FD3ECCB5E6588115A8CE6360C9A843AC38F978584B641D09E5059D6B2C118D751F10440587ADCED47A0C281215CB36C3E13B072C1C3FD7D3D829A155AA7DDEF54677CA50E930DD66CFCD2525BD78DDDC644CC1593E11169D27B4223FF4B18634C093B3EB21F29F3AD09F5EA72D8949FDEDDA26BA6B780C8563702467DA79F81F32D3BFF797553EC9ECF9B68474714A3E8EF245F6D8DF59E39F37BC438EA02C3EC534380CE938E08D601797CC4FAD24EFE2425441D667F781013D6171E24A5CC995EEAFA5E401BD5A291A3CFA7267B725AEC2AD7F16044554F61F7E4757EED86F4B556BB9A8DDA394BF52F3B49565B7373598793A880F24C1BB4D93BFC55B84CC33609AF75C0F811C7A1B8BA17D046A960FD82404B124E40983D1A84FA1C092C29A6E26D1FA1BCA939FC278737A7109A8AC2F73A4BF53D3E5732FE2BFA15020FD24FF60D306D0ACFB8D9FB12B9F36F361CE2108C2B00E4416BB20100A1A3D70985AD7FCD585CE4D5178D509EE5DEB28A2E576DCD9FC8D4E061463B7C56FAE96B5DC38E697BFFC7823ECB70E84C7E039E951D154B199976CE07F9C042BFFB566F493A43DCC0D6873290AE649F908294B7D1876499846E665DCFD9E265FD5934959C09B1B7ED77E082142B41D41135FBF0188D40A3AA6D8FBE57BE51F48184E522FE2D0577D438D2955597DD067B6DE8C4001BF840E2B5AEDD68CE9CBF675D18E3706D8528A8C11E7522C4C2836B0EE7104D1CCB6746B770D434C9AF13AA909E9249B292FDAE80C43F4C046476CBA1EADCE4A6A8578E23BC20090B29253C2AE84EE548EFEF035A5FCA0292169853CA442BD21FDF8E4C072895ADBAAE9535730CA943B00243DEEC6C38EE44F34A432D24A8929B2E5266FCA410B1DC050233E872BA01F4C695172CDF1C315AA25F5F963E343145E7E606932DA1B6D59078EF0A038000A08A670CC4EECE17D82FFF6813244732112C98AB8E224688654A751F0D451C4A534F0BB39CEF2DD63983829BAD6A46F981D6393DFC84EE8266F0CB6CB277705851B6C9BCF83C0C82CDAEFD43276712417DF392CF9FE458FE1F18121EF7945629A41A6FE701276C30BF387B4E41548899437B27362DA0902C7BD744EA228E01BCB63FC25380E057189706F9B545526408B9A672E2034C1570F3F5A7A642DB74A7206A7E7386C4DE115F416C555E3117B5B26752AF2C4E14F7099B6F3666D9936736C03481FF1C6F21E08C750FCBF316B838B8FFE4A794F9132297D1512AE3E6AE8241A1E114CC6A51466221AD198C36C21A9271E8701C365B1836411C70FA8FDC4C252B6B3CADB099CCC43FBD94379F7C07AC32A8B8E278F497E6677763CAC63E29A7FDFF802A5E9C2815E0F8B4D353191201F3CD985F300B8993D67820BBCD5EF5FB31188C471388ED94425106061B279BE830A049969C9068F5952C7A93D9E31805111B2F177CBDB1A17E37D5599C9988300DDA09C9FC019AD10A9A0462F758F4FAB80846F11A3B4A6E6863766109E4B64B9C6F74509FA7ACC3053113E465AD5953DAFF55F14DE0AD07E44337EE67E0744D6F51B911A1AFCAF3EDBBE009CF47D97B91195E2E976964394EE33EC1790BAAAE16A53F12CEC0D6B130A6815C4D725023A87A4769D7B6D3DBF9B179585BB9287C5AC74F733CF3FEABD78DC011DBD6696BDD8A0E6E3F72478153DE0E5E6CC6D9E1F90C3F87026C2A745F79EBEC1DC5DF714D7200137AD848742C612F5737F5A817EC2B60049C73D171DE2CF79CE9EE04D5EF4B30D9AB80E3E1224ADF2E3594A665FD9D2F4B6526FFF2D05CF89C39F9D9437D856191A7A8409F003F4C9BE3B9994B4ED659784A4D95E06D7AD7C67AEA543EFA8A0F0DE34F72511C5EF81D11D752E02B3CE699E39F2CABF5885D45CD174E9B6D9D1098FD407FB3D08C4F380AB4C3C35EFFEEDFF5F470090E5C0E7B194F270A71C5104B98A79730F7324A3CC7D621AEF90029375ADE7C2951ACB8E3B23C72D2B947F7558CA89981DDE925CF942F78227E331F668CBA67ABCE172789329CC8D1593A59C377C7F41CBCBE7122694610F8959B368DE2C47A4A039C8F5732C73426669B6F54D4D4713F00D3AD38279DD1478DCC49DC9AE23B35724F2C7B1B9F0CD470F4476674A8A97E9D1C1025EBF648E66FCEB8467F05CC1C9C8C5D8DD9DD9CBE9EAF2758044E272BA2A12A4B011510FF2B006E75B9CD2F0F2FBA5AC9CE21CB6C89AD2C26AE15E6C7C8977CD6E5720C282284E20D53891AA5EFEF2D0D7EE37D9456F7FC4B36A58E1E451005E8F27EA0119FE65A459867603E832A49B5DA363C53DBD21D37AE09A06D131C2C4D0A8275DB82E5765B1E6D991D0ADCE959353D33E16A4DFB69505832D92F285EF5A58405D587D32724F56F5BECA6AB85E919F03D77E22108B29D6A979F3FDC29613F16B7F99E7602C58B098B862BF25465E4682005686BBF66CB4C8BB2D34EF35EA66DF5B862ADACFD0533A80CA1A6C5E681802D30D1159B0D1844E889606D5B7D54F8CEB5CCDF2BEB98F6541DBA11D611BBEFFEE1A89DD6BACF93A6904911779EECAA9379F5BC79A131A6264C5D605D97773B6982BD94EA4D024F934B8E8945EAE85FF9EA8D8BEECD200BABEC65B547071D2685BDE36A4FE7BDAC34F51E23AC8CB4CE85308E5C9DAECCE13E69A9982D311BD0F71C68EC23755A6517FAA591A7E54534F5FFA9F06703B084901A3920F71CFA1687C64605D668BED0E038308039ADCFDF99784E3E329B84C17E44D943AC5B8049E8C92229E90DD7E402BA0F7E761406AE75418F86EDA933CA9B178BB958545B9B53C9F4FFD032F9B4D8A4441C0C60972DC167CEDC8690BFB644B4CA4DCD86C7C0EBCBBD0F943532C45CA398D5DA787AE18648944CCE3912559268960C7EF193CA5D7A67755D26C2F4830818AFFC51F864263597FB61E7C9A90FE17140A4BAD84217B2D8C13E97973ACA70DFE3D8923781F2AB3E30D15436C8141034C6CC2095504BA86343C2E99159D6CB049F7745988D0B1730BA0B6C8E60D361AA4FEFDDA7769D1FD6FBC3686D154150CADA7E776838E7A9448E23773F6EF45FAC978597AE7148F4E69103C58A5B2366331CD21ACEEAB7620F8621D8F7BF8FB4927CA4D79EB1F9F01960C3E5B940E045926E5802CD564843DD30FB2E69D793D36C9EF6B98B63024407F08167E929C1D2A9C68F01FE22B425360F1CBE91408BA5987B84B72508EB2A569DEF51269E4FFD092522A8D27A16E7D6543DB44629A3CE9D4E915CE0F23C5DD5F6AA449B4AB4322E45A996F8189D063932DAC2DE52EE22B55092C0D93D4E14D2D03158C673647F15DAE05A4554302316047E510F98128BE86FA39549D6B55734DA8C14DC199988D68FE3FACE5B64ACDCC7CDDEC935B67D5A35ABAF16DFEE96FF6A21A6ECCFB182D3D0A443E222949F42B1B5668D29A694EC0FB2657E4D0F39020A1F822403D0BA52095DBB21075B06FEBFD4EE265C6468A15D069DA83D65ECD02EAD569750DAA68E6BC8EC520FC1CE0F394E562C781649FD9356122D6D8AB5E2B7EFE01C0EB1D5C135B5665FD466910BF2FA0DA1F21AAF9546F5E0613B1B184FD5022E088B432B3532465670ACD46E05956C599577E538F55B979C7EFE934BDF2074253215CA0CA238544E96D4921CFFC88F12CC45297ABCBFBDD136549968771601E6000DA86AD1A9C1DBAEAED6902455A3ADC9009148340128318CD20FC381C9936BB2550BEC3B2E370F908BFECAFAE2366E258828857F5A7C63C64DED7861E2A81FAB852154CDC04F3D04E7C309699E2BC563930638CF0C6B692E09BB8C17310FAA0BD7FBB4D657F22FFB9AC54CCEC529DC3DDD5E8E2883209A064C6D4C6DEF24CBFFBC8BDD175045420DCCEBAC5891020291092A8419C39902BB96622CE1F9013E58094C2A37C5600623222F09D2F54F68F5ED982FB7853CA95B46F15AE524207915E4DD4654F280ECB9EF36317E1DEDAA03AC2F9FE1C646FC61283431113B89A2ACA08545E5BEFA49E87823D96B1348D2DF9F69CC4011839386B3C8759354BE2945025C88ED4603236BEF2A4B919CE2EA340B6CBFCA858619025584D4C4474BC2F4D9CFDE134159946BA324DBCD173622FEB43E9B6EB5AF66435BB348D39DBED3BAE4CCFB02FD960ADD414CF70CD3E87EE8FC940CAACAC6302A1A21DA9CE4D4987E84ED3AA3DDE47A874494E440A42EBFE7BEE0E5DEA5C1DBA6A69A490A3B02391DC4C3F115827DB6067FBC9F015E70D0F2D9A8CA03EE0218CC31723DA476D0746326E5F2899602E369DCF4C567B8E1FF0A74DBBF3D0C794E66FD3E9223A8178245B71BF2B4043D77DE5E67574E219C585B951132D8A272818210CEE126A598FFAE68F42F3E53656DB837FE470E54C74C868EE761199C50929923F96A178D586188C6838EF0193135C5AF7C901B506C6D1A53993EDC21941E77919A3C5590D3F79027A90DE07BE1E456911D30A677E8C0EF6CCC830C71544DBED663EC59D28ACE8F13569779E1BC8868387660F8F8CFA9B2329E96021AA8EC6CC47EA60F74D6723C2668A5D85658352282DB0ED3FC53A37CDFD59273A3B3F4BB3A71F8B749397777E23BE16EB9CC77CCE6665A7921E0E3C5B2D5053348883485C8C6D2E22C693526C81F75467DE8489C5E172B15BAEBC3AEFB6077F3CB1BAE2DEF531A81804BEE18A26F467D23870235E154A078BCC9F20CAE380E20CBE2C0983D84366016B6BA95CCCAA95F4886AE4FE5AFD122176C51411951DC5C2EEDD0F8A195CEE284DE0F805512398E04B2D15DEBA002DB185671DBE49371212D6BB4E3AF2D90FEDBC3EDA3ECDF2E59EF03D6D88B4F05E7760FD721B39B729D625D79B3B3D6B23C063933AF2E8CF23BB5D1A2FA0417BA706C8481B9DCA95E784E848001D08DAB12C35C2DAB21405C1E8A246D325AB14E505133D1B0FCCF99F08CAD626866A690060DFDCBFF098B83C2124E39D7ABF00E50140255196B65B6320983AA362D04C2733D168BEBD8219A64D3CAA4318EDC09AA4E455EB823C78FA47913C24490BCCA47A8BC7F4F5BACCE314141C9FE4B684ECD7DFE3D97347845BB7FE029125936A7B8DDBDBC080F7F0E91E62D5734B71CBB54E9CB32D7AD0F91FA5D917EDE80A1AA1D4AC17A83789DAC9A8812AC880B37A34806430978A23F68F58EE706887EBBFE41C59DE74F1307736FBB421DE030014A5FA8A03D51429F5D71F6E695B3DB6CD51272DB279CFC841CC6262F10C0FC20D3AE84C6FCF0BC824B313BD019FC5A1F3B329F62748B6DC51F8E2EAC29B5DCD95880D829AE499BDFE566B6DEBC0FD64C1B74576238DD90625E198C66A2D5F0F2C95302AA25A6BA0E5A51EE7F7715BBD937F7B8D485E2A92224DD895D7E77E5FCA6D278B2144DA81AD21D346810307B19CD88FB8AA0EBECADC7415FBB5B0092BC34F1344CF8631C52D3728CBC09ABB847CC2DA6D3543854B015EF8A87DF3E2CB431713C3A307B9C7A0BB26E2931922761ABFA7E4C66CA73B8F9F58C86263D40E1226BB5B7E889FDB69B7126EDE24D2BCEC100DF1BDA5F84092CA281358815029455F41C6125D3C6721DB235C237C93B597809EC8A9C9E5F403C17223CCB66DDA8FB23DA6F47A7FC04DD6C8254B2BA1036A4C7CF046162FDAE2C75CBB8624DFEBC4124979DBE899DE26D0CE3582166A038BCAE98790756B8736B6C928ECD31CDA37EA49A4322EA3B0704D085853E54AE5B08401CAEA587F047686174E329F152BE7620C11FBCD6F66974A5FC55888B7DC31B211F19CA442BED7E38FF485727DBEC9C24F5DC80DD72218EDDBE0956D10AA9C3A5108354C88EE328CB007F6E212FFF12E02BC747DC28C162219830B95EFDCDBCF5B8387ABAD2F908E457472DD61ED752606019162B71F7303A7B0CE7DA317BE6D295BBF69084AF37B64AC6CE68F9600E184A2BD7BDDD7144735C70BB5F973CA6116150C7BC03628D4046DE9400D98123211197F61D43607EEA43092E9FCA8187FFE95630652FA88A583B51E869B0AFE437741443932B8B47F271B0B0C51E1590DC6FE1F19FBE15AE20B1DA14DABA2138A6C7D8C45117A055E2DC770AD51BD8E13FE86D301F381F3EA3DACF4CD1E9D5344B2664C19B4CAE87C0069C9CEED4EF5F44542E851FACEB8DB47B6018224D9CCE2BE691F8451BF1D3F1DBB30D3071CCCC2EBC56814FA93379CDBD78CDE78335EE4CFBE93F236DA5066A1AD0440E9050D10C45F8E3B1381A214C229BF0B27547F26C6050D198ED89CF6743E5B92B5FDF77D895234739A1C89926D556F1E7243CF98187762657FA256FFA245654181743777F5E20B55ECCA120D0A397D162C88360B9217693B73C86C792B53FCC6AF8C2460E85A013F2889239F9064A24E0C67659951352B7E49C6BCDD4C50D0AFB1596616234BC778B0B89D7B7D112564374625847BCC7AF01B33C998684A061C302C3F43224E69D21A0D6C6F082EF423A43A571DCED74A8301CBAAADB7B559B12150FBDB3068E46357B4600D6151BF6970E27DA82E87FFFA39590F81B679CB6F097AB8A89FD05AED2D66E39D8A4D2FF45D463E614319FD9BAEB1CB59D7BF4912A918A16D53B68405AF1B198938CAD3C51FF1919CB24D95B4C587503448885D0D29EA62AA8BE6679CB9795EB9E9A89A7243BC33449892B67FC22E83AC25BCF51E768C6C8B9537DF1016D46120DF64F4B7EF0FB6865EDF7041743460DDD8842580771AF93F35213CB18756F1C7A0FEF02855839A867ABE8278945996BA0987DC9D3DC7F67DB80D664648DF82B805639E57149296C3D2B5ADE172EF8DDDCBB434FF6349A0A63BC6BABE27CBC553E2D653F510FEB7E64FAF971098CBA6650452DC10D1AD5615EE225F0C93C9212248CBFADE1268CD0AB9DEE628570E86DFC4A7BE89CB51351D56434A0E4FD6605BA320436B2F3869E64ACB63CEF296CD1F2F4A42E7EBCE42FE3844CDF61980C7ADB2DB5D92DFDD42EF3A18D5DED04544D39CB9EF9F90F6A0F12D600C35894090F25D6F5EC64506C8C9BBDE40EE252D26C53FC37FF01F73DB910F18AC9C4D72F5D00963C21DD5C4D036707EEBF69D0603F14F78604AE56D9A32068D908E5FF54A8596A03006C846F3F9497DA148ED909BEE79E0B6A64C1D342EBC814F7DED759D9C1895FF24E3F9B3CC567C35CE679FAF9804FA3F41ED9EF78F8A01EA18E1BCAAF47B6A955BDD39C0ED8C050BA72543DAC63D06763C8824F367F756340094CC30285D642A2470B1F7D6A4BFA5B9B1DFE5B354A4C62D0FF339FAE18ECD6305D6F86EE3580BC10D729004FEF90550ED215FB99F77F7A5AB9642C08F8FB4F234E8DAA398F474720FCEAAA883726E9AE76EC91AFBFD7814369FE3E56C2D511D643F4B1BEB277633F17CFAA02F7A2259F13D62A1DC355376768FC01AD8FA9634A41E5F6A2DDAE66A6D1DD16081A970123B186338CC0645400A2962BA3562552065ACB2812B4461C73B2387E2D1C1B56054D1E2EF9AE7D1F1E1453194EE76C4D4903F57D4442B84C3DAD906809352288449833E7F8B730A211C573FBC1F44C39156D1D69ED7B3D7CB942170948343B1D2C3F330A6B4062B334B134CAFA0258D70F45EE67CFAF5ACD991FC3137E48E7F5F8D4B4E79C9111F018F2548F0413D711A95C2B993EF8A4DAE53EFDCB2915E774F5B81481A91B0F01189D63DAF7A071BE976E973CD23B7C7F418FC7AEB61B84C2795A92840E6C22BCA9F322C2246B67DFF63C49EA8A22D645B7B98F34C8D9B069DFCD1636BFA3B7F42801039C57542B90E76E779730318ECA6A3BE9C492E9E1DB955B613448F8B1952D7F1BB7274A706F2776A1A4557365F6F2DFDEC44C1D911C0570EB053D07561EBFADE78EBC6BCEB91554C81BD93E2612BAB6D818274520E5E26279308D995C2E382A5DD0BABB6BE3E8F7C71EA9F7320A10219A36C5F7ED78AEA0CBF7199632415CC1B563ADE4C27BD75683CEFA7E809DB98E733B93C7766CB445FD56019C2EAE9A7B4A377CC96B4759C38EE0F5FEDFC8A4D7103D2A310C3EF37EAB5BCA5216BEFCCD45122E7D141E0C6C3761E3CB0970C3DD40DB99847AA818279F3AC80F09876DA4D1014B979A569E32F5B470021F7C997188C3A2160C4A7B3573CEA57858D30D4A2339CF2785466ED73246A3E1699FF238148D1B75F9256237FFBC8C8AB883EEFF63E540225AF7EB1BDF31179D1DEF263E3A5695CDAA2AC392A59C7E8C9C8D45D12A3BEF23EC1E2F7EF9DA4432940F0049F769174F06065468EA5EFF95568B590F324785487E6F5B374FB1F5E91972CBB88AC26FE5ADBF17CD8751EABC72B2E25CC8C24C370E6BF0F3DEEA9152C7C3F4121614142203BCDAAD53D65752AF8EDD86AAA14BBD4A22E1B05333FB70C81E1984A71A84767A24E6314B1CC706BD04B2395A7C93C9C3EC78B89B808CF04C77B51B4C03F45F03EF8D015EF321E0C20B19AC632D40DEB3DEC6CD19CC852FFC4515A699EE88378D8429E28CD98839A0BCBD23A3F874A1E3D46E700BA1789910B15DEE925B48D74959A47156E3FF10FE4D3FCB1C879A8738FCCA2243DFC2CCEB2B5224DAB95AF0DEC7ADA05CA1001B55E7AA9D06DC324335768DF3C51ACDD2F9FE7C1FD7D271FDC98D16D48A9C33FB172BD51FE8AB69D19E9371DA58D4AA992DA7C0DEF7B83CD0D51F3C1310DE885E18D8AF87BEC6329B039CFCE9E2C099A409E728DDEBEAE05BA206CDBA89CAD41766DC69B557B85A4DC11F0889DE26312D64333ADD8B44DEE9B6859B67D44F875D830B73332B0D5E6E847AE2CAC8518D6999971FC0BB73C7585D080E2CBED77A1AF4A6BF860B429595BD13F2A9F401D2829DD0E16E4BEF1807CDC9E81C8C5C354DBF15EEA36BBD5DEC89D1FBE643998D96554974B90E4F165BF06348DFDF0D4C9AB5C424B9B4DF85D201D83FBCAD509FA14773CEDF26D11778AEEF5B539ADFE474FD48036A93E3767907B7D70F4D196AA1E5B39A25CDD43DF45C8E379C6FF6FAC010A6848A71EE1C432B68E3C94E3F33BAD2002A1E703999E5D6DE5A246D1E0C050380B4149A897E2CF40EA4CCEE1460D85B6C4FECFE2D9BDC18E41F19ECE390348FE0E33603FB1A9D5ACFC0E2996E5023198E259700A56457E02DF83137CFACFED32A3DEA5E42F341FD0A41B11491AE4E7A3B5942DEEFE05F89358676778C8EFD8925D745E820841378B802A28D0A1127B47F5CF955891E9FAA2B0F0673EF70747DB2B6D1C90A10EA674E88EC888037A22A3DC47F84EFC15ECCCEEBC75063195E113E77E667DA6A94ECA1287F6C1E6F782542DCB812380871437C233831F6DFAE2E48FA58490DF4AEF766A550589CD6929FD3E1F8CC3086287B55DCE5D15FEF30CCB67DA09C46495E2DE8DCE372C5F8F522DA7A0CDBE508FBD9FA9A30665E5A4B39B7F1D60D4265EEE0DC42450BF0788171AD4344312F35F041904536969649816DEBA74C8EED9600AA0426984C675321C4D90E5DAB039038B254858969DF118A5B7A2F61992E8E0DCFC463B0160F0F288C84FA2C8452625CFB7EA81C0A1E1A784D96F117F2CCD399A5DD1DA6E55C52051BD5B16DCBCD3EF4FDBCE192C903C549DFE23EFA00B8AE45D213CFE5A1FDD7BD5106C250DFD733C140D5D66E21F64DF4EC1A22A85641558108164268ADA8536605F46E4A0706247AA042140A8402D9F1C27F9F58D96F1869F8BD79842C1D1409DAF50D8B08C509C4A65104117C8C7DC1EBA0E7D538FC08948803536BB72D6E0CE50D6A9E8AB02C7B415003ED37287F2C713D32D8D1B1CB554A4467CDAFD6E9E6F2E596A2514FE2AB909C9FAF7AF0434AA177DD55D6F823FA7E9FF5B3767452D84F25D4C7B9805F958BEAEDA4B03866C9A7EF98B524E42483B321F3E487339C0E698B47AA2094A5271A7B5629726E612331E08F18B1B249EFFB80363B9085D1B2E9D2C06AD4AA323AE0568F5EB9498660E0CB3A57F7E851FAC2B85859FE0BC7A4CE0AFD7CE4373777B2DDAF254BF3A787DE0743350BAE5D7BF55F36FB9ABFB4EBC42BA0559AE48760823F77319C0C293330C3BE092B6590998A84C98FE33A7C3BE57634662E2CA243EB9C24BF1B6BD40701F170426AF3224295C9D0FDE7A3D13206024E97A094142C70B045BE742738A849ECFE525A65F2501F7EB7DBDD0AFBA0BD89EEE6B117E78583005347A8C388D2D1A32680236C93927BBCAD8F203D834D48B8871FB10C0826D453221812E6945186E967B2E3D830671D93DF5995E2199070E920A583FC3086D8D587539AE001EF90C51A8AD6304A3305A0BEA160A2B87A9A2641D4E03E7D013D67B6A0FD29B15813AB7BA355693517DC98E20C9B14F9FCF98F4753974E2BFD151A11FD2768C6EFFBDC6A047BA9FB438F3095A7986F5EF391370E9F53F5A4CED24E23EEAF7A70F48A6F8AFBD92B31EC8EC25381EDB38EF3739B16D7FE92BD7EDA073D33AFB92DD80FF2A06AA2FC90D92C0C8119523143A9F9F8A39D42E5B756DD55762B5DF9D86522C1F070236AD7C53CF651381AD30DDFD96426F3F260E9A1CF4DDEC5CD91A431A08FF37D21963AFA8B7C86968563B16F778D013E12DF4047F47E6610A5FF2A4967780F594DC02F71655B7BBAC8D9866B7A6500777E00BC1AEA7180470127238851D7384ADE68C528B50EEEBBB99AD24C7E6A843D14885D924AA002B1AAB28C979C82B7CA267A4F698289AA9023E9648BBFC2E7876AE2DA90E8E70178E826E98B2360FE78604F6651CC10BD376D2788D0D28296A8E4E6159535F669FFE65AAC85EDCB4E7ABD15F504A57255B640312E454CAEB45ABF4AA3688DF66F39034F8591B1F78DCFB895E6FD87B57A2D9734F3DB4B26499EBF11BF7B9EC986F2F8E8716C92B0FC2E7DC7527BEDCAE61910294BD451709A7B6DB498AC5948E19A758ABCA5A5116FCA3082DBDF6274EC84C4EA4DFD781FC9D3EC1D55F758017E4EB63E1FF2DE62D0F3AFFD9AF8F4B635ED10A476824E79DA1B575C49C7DFE250BB84DDF1E129D48E950D3568FC248FDEA207A36D1DE8FC574F2CE556BDA8CDD009452536B7C0FB6D668D9E63FB14B2C07AAA2CB53399045542D9C884D5D0C7B29FE2E8326156E1E4B3D899F5EA86087F1CFF5144B8E28AFEF36956327C911E08BDDF4EAB1792EC0548CEEF2588DC9ACE5D5EE56C12B69B6C6380A2F9219DAB3FA6E50F84A8B5D026EFBB2B989DFA2D4A223A0A174690303CDA53A7BBBF4100929B92465029FFDE22FE54F4DBE4814823CEDB7EC7432A68DF291FAB64879C11E2A8E7271A1A60E176BE374D2EF962232E43A9378D7183BBB260B02043754C221F096074EC3A392175C19C40000000132B1638FB16C4EB88BD324F31E13D087387F663127B8E5A524798B6222D0489714D81F987E52703CDE68B36838E68FDA0E37E3F66863B1A6541C3FA5B14E0D5</accessToken>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Google BigQuery Input
+QUERYING PROJECT=steadfast-task-382120
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="Python" EngineDllEntryPoint="big_query_input_v3.0.0\main.py" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="234" y="80" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="invoice_and_item_number" selected="True" />
+                <Field field="store_number" selected="True" />
+                <Field field="store_name" selected="True" />
+                <Field field="address" selected="True" />
+                <Field field="city" selected="True" />
+                <Field field="zip_code" selected="True" />
+                <Field field="store_location" selected="True" />
+                <Field field="county_number" selected="True" />
+                <Field field="county" selected="True" />
+                <Field field="category" selected="True" />
+                <Field field="category_name" selected="True" />
+                <Field field="vendor_number" selected="True" />
+                <Field field="vendor_name" selected="True" />
+                <Field field="item_number" selected="True" />
+                <Field field="item_description" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="invoice_and_item_number" size="16" type="String" />
+                <Field name="date" type="Date" />
+                <Field name="store_number" type="Int16" />
+                <Field name="store_name" size="58" type="V_String" />
+                <Field name="address" size="55" type="V_String" />
+                <Field name="city" size="17" type="V_String" />
+                <Field name="zip_code" size="7" type="String" />
+                <Field name="store_location" size="29" type="String" />
+                <Field name="county_number" type="Byte" />
+                <Field name="county" size="13" type="V_String" />
+                <Field name="category" type="Double" />
+                <Field name="category_name" size="36" type="V_String" />
+                <Field name="vendor_number" type="Double" />
+                <Field name="vendor_name" size="67" type="V_WString" />
+                <Field name="item_number" size="7" type="String" />
+                <Field name="item_description" size="63" type="V_WString" />
+                <Field name="pack" type="Int64" />
+                <Field name="bottle_volume_ml" type="Int64" />
+                <Field name="state_bottle_cost" type="Double" />
+                <Field name="state_bottle_retail" type="Double" />
+                <Field name="bottles_sold" type="Int64" />
+                <Field name="sale_dollars" type="Double" />
+                <Field name="volume_sold_liters" type="Double" />
+                <Field name="volume_sold_gallons" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="8">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="534" y="80" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+                <FormulaField expression="IF IsNull([address]) THEN &quot;N/A&quot; ELSE ([address]) ENDIF" field="address" size="32" type="V_String" />
+                <FormulaField expression="IF IsNull([city]) THEN &quot;N/A&quot; ELSE ([city]) ENDIF" field="city" size="17" type="V_String" />
+                <FormulaField expression="IF IsNull([zip_code]) THEN 0000 ELSE ([zip_code]) ENDIF" field="zip_code" size="7" type="String" />
+                <FormulaField expression="IF IsNull([store_location]) THEN &quot;N/A&quot; ELSE ([store_location]) ENDIF" field="store_location" size="29" type="String" />
+                <FormulaField expression="IF IsNull([county]) THEN &quot;N/A&quot; ELSE ([county]) ENDIF" field="county" size="13" type="V_String" />
+                <FormulaField expression="IF IsNull([county_number]) THEN 0000 ELSE ([county_number]) ENDIF" field="county_number" size="1" type="Byte" />
+                <FormulaField expression="IF IsNull([invoice_and_item_number]) THEN &quot;N/A&quot; ELSE ([invoice_and_item_number]) ENDIF" field="invoice_and_item_number" size="15" type="String" />
+                <FormulaField expression="IF IsNull([store_number]) THEN 0000 ELSE ([store_number]) ENDIF" field="store_number" size="2" type="Int16" />
+                <FormulaField expression="IF IsNull([store_name]) THEN &quot;N/A&quot; ELSE ([store_name]) ENDIF" field="store_name" size="50" type="V_String" />
+                <FormulaField expression="IF IsNull([category]) THEN 0000 ELSE ([category]) ENDIF" field="category" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([category_name]) THEN &quot;N/A&quot; ELSE ([category_name]) ENDIF" field="category_name" size="35" type="V_String" />
+                <FormulaField expression="IF IsNull([vendor_number]) THEN 0000 ELSE ([vendor_number]) ENDIF" field="vendor_number" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([vendor_name]) THEN &quot;N/A&quot; ELSE ([vendor_name]) ENDIF" field="vendor_name" size="67" type="V_String" />
+                <FormulaField expression="IF IsNull([item_number]) THEN 0000 ELSE ([item_number]) ENDIF" field="item_number" size="4" type="Int32" />
+                <FormulaField expression="IF IsNull([item_description]) THEN &quot;N/A&quot; ELSE ([item_description]) ENDIF" field="item_description" size="55" type="V_String" />
+                <FormulaField expression="IF IsNull([pack]) THEN 0000 ELSE ([pack]) ENDIF" field="pack" size="8" type="Int64" />
+                <FormulaField expression="IF IsNull([bottle_volume_ml]) THEN 0000 ELSE ([bottle_volume_ml]) ENDIF" field="bottle_volume_ml" size="8" type="Int64" />
+                <FormulaField expression="IF IsNull([state_bottle_cost]) THEN 0000 ELSE ([state_bottle_cost]) ENDIF" field="state_bottle_cost" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([state_bottle_retail]) THEN 0000 ELSE ([state_bottle_retail]) ENDIF" field="state_bottle_retail" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([bottles_sold]) THEN 0000 ELSE ([bottles_sold]) ENDIF" field="bottles_sold" size="8" type="Int64" />
+                <FormulaField expression="IF IsNull([sale_dollars]) THEN 0000 ELSE ([sale_dollars]) ENDIF" field="sale_dollars" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([volume_sold_liters]) THEN 0000 ELSE ([volume_sold_liters]) ENDIF" field="volume_sold_liters" size="8" type="Double" />
+                <FormulaField expression="IF IsNull([volume_sold_gallons]) THEN 0000 ELSE ([volume_sold_gallons]) ENDIF" field="volume_sold_gallons" size="8" type="Double" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DI_CreateDate = DateTimeNow()
+address = IF IsNull([address]) THEN "N/A" ELSE ([a...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="738" y="49" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_15536_676a8770df574e4bbc3a5f7075067316_\Engine_15536_c53e1a1e8ca9284ba16be81770f73cfc~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="88">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="426" y="80" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="date" />
+                <Field name="invoice_and_item_number" selected="False" />
+                <Field name="store_number" selected="False" />
+                <Field name="store_name" selected="False" />
+                <Field name="address" selected="False" />
+                <Field name="city" selected="False" />
+                <Field name="zip_code" selected="False" />
+                <Field name="store_location" selected="False" />
+                <Field name="county_number" selected="False" />
+                <Field name="county" selected="False" />
+                <Field name="category" selected="False" />
+                <Field name="category_name" selected="False" />
+                <Field name="vendor_number" selected="False" />
+                <Field name="vendor_name" selected="False" />
+                <Field name="item_number" selected="False" />
+                <Field name="item_description" selected="False" />
+                <Field name="pack" selected="False" />
+                <Field name="bottle_volume_ml" selected="False" />
+                <Field name="state_bottle_cost" selected="False" />
+                <Field name="state_bottle_retail" selected="False" />
+                <Field name="bottles_sold" selected="False" />
+                <Field name="sale_dollars" selected="False" />
+                <Field name="volume_sold_liters" selected="False" />
+                <Field name="volume_sold_gallons" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeParse([_CurrentField_], '%Y-%m-%d %H:%M:%S')</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeParse([_CurrentField_], '%Y-%m-%d %H:%M:%S')</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="89">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="330" y="80" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="90">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="726" y="133" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_liquor_sales_alteryx</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_liquor_sal...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="54" y="293" width="1113" height="291" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 23</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="381" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Iowa_Liquor_Products.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Item Number" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Category Name" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Item Description" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Vendor" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Vendor Name" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Bottle Volume (ml)" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Pack" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Inner Pack" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Age" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Proof" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="List Date" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="UPC" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="SCC" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="State Bottle Cost" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="State Case Cost" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="State Bottle Retail" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Report Date" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="224" y="380" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Item Number" selected="True" />
+                <Field field="Category Name" selected="True" />
+                <Field field="Item Description" selected="True" />
+                <Field field="Vendor" selected="True" />
+                <Field field="Vendor Name" selected="True" />
+                <Field field="Bottle Volume (ml)" selected="True" />
+                <Field field="Pack" selected="True" />
+                <Field field="Inner Pack" selected="True" />
+                <Field field="Age" selected="True" />
+                <Field field="Proof" selected="True" />
+                <Field field="List Date" selected="True" />
+                <Field field="UPC" selected="True" />
+                <Field field="SCC" selected="True" />
+                <Field field="State Bottle Cost" selected="True" />
+                <Field field="State Case Cost" selected="True" />
+                <Field field="State Bottle Retail" selected="True" />
+                <Field field="Report Date" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Item Number" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Int32" />
+                <Field name="Category Name" size="36" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_String" />
+                <Field name="Item Description" size="60" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_WString" />
+                <Field name="Vendor" size="3" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="String" />
+                <Field name="Vendor Name" size="60" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="V_String" />
+                <Field name="Bottle Volume (ml)" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Int16" />
+                <Field name="Pack" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Byte" />
+                <Field name="Inner Pack" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Byte" />
+                <Field name="Age" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Byte" />
+                <Field name="Proof" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Byte" />
+                <Field name="List Date" size="10" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="String" />
+                <Field name="UPC" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Int64" />
+                <Field name="SCC" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Int64" />
+                <Field name="State Bottle Cost" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Double" />
+                <Field name="State Case Cost" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Double" />
+                <Field name="State Bottle Retail" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="Double" />
+                <Field name="Report Date" size="10" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Products.tsv" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="332" y="381" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Item Number" selected="True" />
+                <SelectField field="Category Name" selected="True" />
+                <SelectField field="Item Description" selected="True" />
+                <SelectField field="Vendor" selected="True" />
+                <SelectField field="Vendor Name" selected="True" />
+                <SelectField field="Bottle Volume (ml)" selected="True" />
+                <SelectField field="Pack" selected="True" />
+                <SelectField field="Inner Pack" selected="True" />
+                <SelectField field="Age" selected="True" />
+                <SelectField field="Proof" selected="True" />
+                <SelectField field="List Date" selected="True" />
+                <SelectField field="UPC" selected="True" />
+                <SelectField field="SCC" selected="True" />
+                <SelectField field="State Bottle Cost" selected="True" />
+                <SelectField field="State Case Cost" selected="True" />
+                <SelectField field="State Bottle Retail" selected="True" />
+                <SelectField field="Report Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="21">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="572" y="381" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Item Number" selected="True" />
+                <SelectField field="Category Name" selected="True" />
+                <SelectField field="Item Description" selected="True" />
+                <SelectField field="Vendor" selected="True" />
+                <SelectField field="Vendor Name" selected="True" />
+                <SelectField field="Bottle Volume (ml)" selected="True" />
+                <SelectField field="Pack" selected="True" />
+                <SelectField field="Inner Pack" selected="True" />
+                <SelectField field="Age" selected="True" />
+                <SelectField field="Proof" selected="True" />
+                <SelectField field="UPC" selected="True" />
+                <SelectField field="SCC" selected="True" />
+                <SelectField field="State Bottle Cost" selected="True" />
+                <SelectField field="State Case Cost" selected="True" />
+                <SelectField field="State Bottle Retail" selected="True" />
+                <SelectField field="New_List Date" selected="True" />
+                <SelectField field="New_Report Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="704" y="381" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[DI_CreateDate = DateTimeNow()
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="24">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="440" y="381" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="List Date" />
+                <Field name="Report Date" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeParse([_CurrentField_], '%m/%d/%Y')</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeParse([_CurrentField_], '%m/%d/%Y')</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="31">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="872" y="393" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="IF IsNull([SCC]) THEN 0000 ELSE ([SCC]) ENDIF" field="SCC" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[SCC = IF IsNull([SCC]) THEN 0000 ELSE ([SCC]) ENDIF
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="26">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="1038" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_10020_1a077556309e084c90e7143dd61eb61b_\Engine_10020_76cc9e541ebdbc48abc8c703b64784b9~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="91">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1038" y="438" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_liquor_products_alteryx</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Create</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_liquor_pro...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="52" y="1361" width="910" height="267" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 61</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="66">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="77" y="1421" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Iowa_Liquor_Sales_by_Year_and_County.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="V_WString" />
+                <Field name="County" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="V_WString" />
+                <Field name="Sale (Dollars)" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="V_WString" />
+                <Field name="Volume Sold (Gallons)" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="67">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="185" y="1422" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Date" selected="True" />
+                <Field field="County" selected="True" />
+                <Field field="Sale (Dollars)" selected="True" />
+                <Field field="Volume Sold (Gallons)" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="Int16" />
+                <Field name="County" size="13" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="V_String" />
+                <Field name="Sale (Dollars)" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="Double" />
+                <Field name="Volume Sold (Gallons)" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year_and_County.tsv" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="68">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="306" y="1422" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="True" type="String" size="16384" />
+                <SelectField field="County" selected="True" />
+                <SelectField field="Sale (Dollars)" selected="True" />
+                <SelectField field="Volume Sold (Gallons)" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="71">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="582" y="1422" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+                <FormulaField expression="IF IsNull([County]) THEN &quot;N/A&quot; ELSE ([County]) ENDIF" field="County" size="13" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DI_CreateDate = DateTimeNow()
+County = IF IsNull([County]) THEN "N/A" ELSE ([Cou...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="74">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="846" y="1410" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_12820_fe3946bcfa54e8418993ec27a6902b33_\Engine_12820_4fd83341d12bc947a0e86d24e655407d~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="76">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="426" y="1422" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Date" />
+                <Field name="County" selected="False" />
+                <Field name="Sale (Dollars)" selected="False" />
+                <Field name="Volume Sold (Gallons)" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeParse([_CurrentField_], '%Y')</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeParse([_CurrentField_], '%Y')</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="97">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="834" y="1482" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_liquor_sales_by_year_and_county</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_liquor_sal...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="98">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="678" y="1422" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="County" selected="True" />
+                <SelectField field="Sale (Dollars)" selected="True" />
+                <SelectField field="Volume Sold (Gallons)" selected="True" />
+                <SelectField field="New_Date" selected="True" />
+                <SelectField field="DI_CreateDate" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="85">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="41" y="1661" width="898" height="255" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 53</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="77">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="66" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv</File>
+              <FormatSpecificOptions>
+                <HeaderRow>True</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\t</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Iowa_Liquor_Sales_by_Year.tsv</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="V_WString" />
+                <Field name="Sale (Dollars)" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="V_WString" />
+                <Field name="Volume Sold (Gallons)" size="254" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="78">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+            <Position x="186" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Fields>
+                <Field field="Date" selected="True" />
+                <Field field="Sale (Dollars)" selected="True" />
+                <Field field="Volume Sold (Gallons)" selected="True" />
+                <Field field="*Unknown" selected="False" />
+              </Fields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Date" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="Int16" />
+                <Field name="Sale (Dollars)" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="Double" />
+                <Field name="Volume Sold (Gallons)" source="File: C:\Users\Tj\Downloads\Iowa_Liquor_Sales_by_Year.tsv" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+        </Node>
+        <Node ToolID="79">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="True" />
+                <SelectField field="Sale (Dollars)" selected="True" />
+                <SelectField field="Volume Sold (Gallons)" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="80">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiFieldFormula.MultiFieldFormula">
+            <Position x="402" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldType>All</FieldType>
+              <Fields orderChanged="False">
+                <Field name="Date" />
+                <Field name="Sale (Dollars)" selected="False" />
+                <Field name="Volume Sold (Gallons)" selected="False" />
+                <Field name="*Unknown" selected="False" />
+              </Fields>
+              <NewFieldAddOn>New_</NewFieldAddOn>
+              <NewFieldAddOnPos>Prefix</NewFieldAddOnPos>
+              <CopyOutput value="True" />
+              <Expression>DateTimeParse(toString([_CurrentField_]), '%Y')</Expression>
+              <ChangeFieldType value="True" />
+              <OutputFieldType type="DateTime" size="19" scale="1" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DateTimeParse(toString([_CurrentField_]), '%Y')</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiFieldFormula" />
+        </Node>
+        <Node ToolID="81">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="522" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Date" selected="False" type="DateTime" size="19" />
+                <SelectField field="Sale (Dollars)" selected="True" />
+                <SelectField field="Volume Sold (Gallons)" selected="True" />
+                <SelectField field="New_Date" selected="True" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="82">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="618" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[DI_CreateDate = DateTimeNow()
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="84">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="762" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\Tj\AppData\Local\Temp\Engine_10956_2241890831dc4244a372702502a5bbdb_\Engine_10956_f9b9153d18834e42886b312a76246c2c~.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Profile</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="96">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="810" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=SQLServer|||Iowa.dbo.stg_iowa_liquor_sales_by_year</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <TransactionSize>10000</TransactionSize>
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <PostSQL />
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+                <TransactionMessages>False</TransactionMessages>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=SQLServer
+Query=Iowa.dbo.stg_iowa_liquor_sal...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="86" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="86" Connection="Output" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="Output" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="31" Connection="Output" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="67" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="67" Connection="Output" />
+      <Destination ToolID="68" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="68" Connection="Output" />
+      <Destination ToolID="76" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="76" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="74" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="77" Connection="Output" />
+      <Destination ToolID="78" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="78" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="80" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="81" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Iowa_Staging</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="97c0c728-e826-4d16-859d-bbbac14f0201" />
+      <Telemetry>
+        <PreviousWorkflowId value="009b435a-8f14-42ff-b579-87ad0ce1678b" />
+        <OriginWorkflowId value="009b435a-8f14-42ff-b579-87ad0ce1678b" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

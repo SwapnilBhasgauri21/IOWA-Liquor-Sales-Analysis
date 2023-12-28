@@ -1,0 +1,274 @@
+/*
+ * ER/Studio Data Architect SQL Code Generation
+ * Project :      Iowa_Dimensional_Model.DM1
+ *
+ * Date Created : Friday, April 07, 2023 18:03:01
+ * Target DBMS : Microsoft SQL Server 2019
+ */
+
+/* 
+ * TABLE: Dim_Address 
+ */
+
+CREATE TABLE Dim_Address(
+    Address_SK       char(10)         NOT NULL,
+    State            nvarchar(100)    NULL,
+    County           nvarchar(100)    NULL,
+    County_No        int              NULL,
+    City             nvarchar(100)    NULL,
+    ZipCode          int              NULL,
+    Primary_Point    int              NULL,
+    Population_SK    int              NULL,
+    CONSTRAINT PK8_1 PRIMARY KEY NONCLUSTERED (Address_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Address') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Address >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Address >>>'
+go
+
+/* 
+ * TABLE: Dim_Category 
+ */
+
+CREATE TABLE Dim_Category(
+    Vendor_SK       int            NOT NULL,
+    Vendor_no       int            NULL,
+    Vendor_name     varchar(18)    NULL,
+    Violation_SK    int            NULL,
+    CONSTRAINT PK8_2 PRIMARY KEY NONCLUSTERED (Vendor_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Category') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Category >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Category >>>'
+go
+
+/* 
+ * TABLE: Dim_Date 
+ */
+
+CREATE TABLE Dim_Date(
+    Date_SK             date    NOT NULL,
+    dayofMonthNumber    int     NULL,
+    dayofWeekNumber     int     NULL,
+    dayofYearNumber     int     NULL,
+    MonthNumber         int     NULL,
+    QuarterNumber       int     NULL,
+    YearNumber          int     NULL,
+    CONSTRAINT PK9 PRIMARY KEY NONCLUSTERED (Date_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Date') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Date >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Date >>>'
+go
+
+/* 
+ * TABLE: Dim_Population 
+ */
+
+CREATE TABLE Dim_Population(
+    Population_SK    int    NOT NULL,
+    FIPS             int    NULL,
+    Population       int    NULL,
+    CONSTRAINT PK6 PRIMARY KEY NONCLUSTERED (Population_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Population') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Population >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Population >>>'
+go
+
+/* 
+ * TABLE: Dim_Product 
+ */
+
+CREATE TABLE Dim_Product(
+    Violation_SK           int               NOT NULL,
+    Violation_Code         int               NULL,
+    Violation_Comments     varchar(15000)    NULL,
+    Violation_Points       int               NULL,
+    Violation_Detail       int               NULL,
+    Inner_Pack             int               NULL,
+    Violation_Memo         int               NULL,
+    Proof                  int               NULL,
+    UPC                    int               NULL,
+    SCC                    int               NULL,
+    State_Bottle_Cost      int               NULL,
+    State_Bottle_Retail    int               NULL,
+    State_Case_Cost        int               NULL,
+    ReportDate             date              NULL,
+    List_Date              date              NULL,
+    Stores_SK              int               NULL,
+    CONSTRAINT PK8 PRIMARY KEY NONCLUSTERED (Violation_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Product') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Product >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Product >>>'
+go
+
+/* 
+ * TABLE: Dim_Stores 
+ */
+
+CREATE TABLE Dim_Stores(
+    Stores_SK         int             NOT NULL,
+    Store_Address     char(10)        NULL,
+    Store_no          int             NULL,
+    Store_Name        char(10)        NULL,
+    Store_Status      char(10)        NULL,
+    Store_Location    nvarchar(10)    NULL,
+    Address_SK        char(10)        NULL,
+    Vendor_SK         int             NULL,
+    CONSTRAINT PK5 PRIMARY KEY NONCLUSTERED (Stores_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Stores') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Stores >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Stores >>>'
+go
+
+/* 
+ * TABLE: Dim_Vendor 
+ */
+
+CREATE TABLE Dim_Vendor(
+    Vendor_SK      int            NOT NULL,
+    Vendor_no      int            NULL,
+    Vendor_name    varchar(18)    NULL,
+    CONSTRAINT PK8 PRIMARY KEY NONCLUSTERED (Vendor_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Dim_Vendor') IS NOT NULL
+    PRINT '<<< CREATED TABLE Dim_Vendor >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Dim_Vendor >>>'
+go
+
+/* 
+ * TABLE: Fct_Sales 
+ */
+
+CREATE TABLE Fct_Sales(
+    Sales_SK                int             NOT NULL,
+    Bottle_vol              int             NULL,
+    Bottle_Sold             int             NULL,
+    Sales                   int             NULL,
+    Volume_Sold             int             NULL,
+    [Volume_Sold(Gallons)]  int             NULL,
+    Invoice_no              int             NULL,
+    Invoice_Item_Number     nvarchar(10)    NULL,
+    Invoice_Date            date            NULL,
+    Date_SK                 date            NULL,
+    Violation_SK            int             NULL,
+    CONSTRAINT PK2 PRIMARY KEY NONCLUSTERED (Sales_SK)
+)
+
+go
+
+
+IF OBJECT_ID('Fct_Sales') IS NOT NULL
+    PRINT '<<< CREATED TABLE Fct_Sales >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Fct_Sales >>>'
+go
+
+/* 
+ * TABLE: Dim_Address 
+ */
+
+ALTER TABLE Dim_Address ADD CONSTRAINT RefDim_Population24 
+    FOREIGN KEY (Population_SK)
+    REFERENCES Dim_Population(Population_SK)
+go
+
+
+/* 
+ * TABLE: Dim_Category 
+ */
+
+ALTER TABLE Dim_Category ADD CONSTRAINT RefDim_Product5 
+    FOREIGN KEY (Violation_SK)
+    REFERENCES Dim_Product(Violation_SK)
+go
+
+
+/* 
+ * TABLE: Dim_Product 
+ */
+
+ALTER TABLE Dim_Product ADD CONSTRAINT RefDim_Stores13 
+    FOREIGN KEY (Stores_SK)
+    REFERENCES Dim_Stores(Stores_SK)
+go
+
+ALTER TABLE Dim_Product ADD CONSTRAINT RefDim_Date22 
+    FOREIGN KEY (List_Date)
+    REFERENCES Dim_Date(Date_SK)
+go
+
+ALTER TABLE Dim_Product ADD CONSTRAINT RefDim_Date23 
+    FOREIGN KEY (ReportDate)
+    REFERENCES Dim_Date(Date_SK)
+go
+
+
+/* 
+ * TABLE: Dim_Stores 
+ */
+
+ALTER TABLE Dim_Stores ADD CONSTRAINT RefDim_Address2 
+    FOREIGN KEY (Address_SK)
+    REFERENCES Dim_Address(Address_SK)
+go
+
+ALTER TABLE Dim_Stores ADD CONSTRAINT RefDim_Vendor29 
+    FOREIGN KEY (Vendor_SK)
+    REFERENCES Dim_Vendor(Vendor_SK)
+go
+
+
+/* 
+ * TABLE: Fct_Sales 
+ */
+
+ALTER TABLE Fct_Sales ADD CONSTRAINT RefDim_Date12 
+    FOREIGN KEY (Date_SK)
+    REFERENCES Dim_Date(Date_SK)
+go
+
+ALTER TABLE Fct_Sales ADD CONSTRAINT RefDim_Product14 
+    FOREIGN KEY (Violation_SK)
+    REFERENCES Dim_Product(Violation_SK)
+go
+
+
